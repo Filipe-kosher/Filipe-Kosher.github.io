@@ -10,7 +10,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-	  user-select: none;
+      user-select: none;
     }
     body, html {
       height: 100%;
@@ -105,7 +105,7 @@
       position: absolute;
       right: 30px;
       top: 30px;
-      z-index: 15;
+      z-index: 150; /* Aumentado para ficar acima do background */
     }
     .menu-toggle span {
       height: 3px;
@@ -136,6 +136,13 @@
 
       nav.active ul {
         display: flex;
+      }
+      nav.active {
+        height: auto;
+        padding-bottom: 20px;
+      }
+      nav li {
+        margin: 12px 0;
       }
     }
     .herozada {
@@ -174,9 +181,9 @@
       color: white;
       text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
       white-space: nowrap;
-      font-size: clamp(3rem, 15vw, 8rem); /* Ajuste responsivo */
-      text-align: center; /* Centralizar em mobile */
-      padding: 0 20px; /* Adicionado padding lateral */
+      font-size: 8rem; /* Desktop */
+      text-align: center;
+      padding: 0 20px;
     }
     @keyframes bounce {
       0%, 100% {
@@ -218,11 +225,11 @@
       overflow: hidden;
     }
     .scroll-section h2 {
-      font-size: clamp(1.5rem, 5vw, 2rem); /* Ajuste responsivo */
+      font-size: 2rem; /* Desktop */
       margin-bottom: 20px;
       position: relative;
       z-index: 10;
-      padding: 0 15px; /* Adicionado padding lateral */
+      padding: 0 15px;
     }
     .pointer-highlight-wrapper {
       display: inline-block;
@@ -276,23 +283,22 @@
     }
     .skills .section-subtitle {
       color: var(--primary-color);
-      font-size: clamp(1rem, 4vw, 1.2em); /* Ajuste responsivo */
+      font-size: 1.2em; /* Desktop */
       margin-bottom: 10px;
     }
     .skills-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Layout grid */
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 33px;
       list-style: none;
       padding: 0;
-      max-width: 1200px;
-      margin: 0 auto;
     }
     .skills-item {
       background-color: var(--secondary-color);
-      padding: 15px;
+      padding: 20px;
       border-radius: 10px;
+      width: 250px; /* Desktop */
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s ease;
     }
@@ -306,11 +312,11 @@
       margin-bottom: 10px;
     }
     .skills-title {
-      font-size: clamp(0.9rem, 3vw, 1.2em); /* Ajuste responsivo */
+      font-size: 1.2em; /* Desktop */
     }
     .skills-data {
       color: var(--primary-color);
-      font-size: clamp(0.8rem, 3vw, 1em); /* Ajuste responsivo */
+      font-size: 1em; /* Desktop */
     }
     .skills-progress-box {
       background-color: #555;
@@ -349,7 +355,7 @@
       z-index: 1;
     }
     .control-section h2 {
-      font-size: clamp(2rem, 10vw, 4.5rem); /* Ajuste responsivo */
+      font-size: 4.5rem; /* Desktop */
       font-weight: bold;
       position: relative;
       z-index: 2;
@@ -357,8 +363,6 @@
       gap: 0.2em;
       font-family: 'Geist', sans-serif;
       text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-      flex-wrap: wrap; /* Permitir quebra de linha */
-      justify-content: center; /* Centralizar em telas pequenas */
     }
     .projects {
       background-color: #000;
@@ -366,7 +370,7 @@
       text-align: center;
     }
     .projects .section-title {
-      font-size: clamp(1.5rem, 5vw, 1.9rem); /* Ajuste responsivo */
+      font-size: 1.9rem; /* Desktop */
       margin-bottom: 10px;
       background: linear-gradient(20deg, var(--primary-color), #ff5100);
       -webkit-background-clip: text;
@@ -375,20 +379,19 @@
     }
     .projects .section-subtitle {
       color: #aaa;
-      font-size: clamp(0.9rem, 3vw, 1.1rem); /* Ajuste responsivo */
+      font-size: 1.1rem; /* Desktop */
       margin-bottom: 40px;
       max-width: 700px;
       margin-left: auto;
       margin-right: auto;
-      padding: 0 15px; /* Adicionado padding lateral */
     }
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      gap: 30px;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 10px;
+      padding: 20px;
     }
     .project-card {
       background: linear-gradient(145deg, #111, var(--secondary-color));
@@ -404,7 +407,7 @@
     }
     .project-image {
       width: 100%;
-      height: 180px; /* Altura reduzida */
+      height: 200px;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
@@ -412,48 +415,47 @@
       transform: scale(1.05);
     }
     .project-info {
-      padding: 20px 15px; /* Padding ajustado */
+      padding: 25px;
       text-align: left;
       position: relative;
     }
     .project-info h3 {
-      font-size: clamp(1.1rem, 4vw, 1.4rem); /* Ajuste responsivo */
-      margin-bottom: 10px;
+      font-size: 1.4rem; /* Desktop */
+      margin-bottom: 12px;
     }
     .project-info p {
       color: #bbb;
-      font-size: clamp(0.85rem, 3vw, 0.95rem); /* Ajuste responsivo */
+      font-size: 0.95rem; /* Desktop */
       line-height: 1.6;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
     .project-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 15px;
+      gap: 8px;
+      margin-bottom: 20px;
     }
     .project-tag {
       background: rgba(255, 102, 0, 0.2);
       color: var(--primary-color);
-      padding: 3px 8px;
+      padding: 4px 10px;
       border-radius: 20px;
-      font-size: 0.7rem;
+      font-size: 0.75rem;
       font-weight: 600;
     }
     .project-links {
       display: flex;
-      gap: 10px;
-      flex-wrap: wrap; /* Permitir quebra de linha */
+      gap: 15px;
     }
     .project-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 7px 15px;
+      padding: 8px 20px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       transition: all 0.3s ease;
     }
     .project-link-primary {
@@ -474,8 +476,7 @@
       transform: translateY(-2px);
     }
     .project-link i {
-      margin-right: 6px;
-      font-size: 0.9rem;
+      margin-right: 8px;
     }
     .project-card::before {
       content: '';
@@ -529,22 +530,16 @@
     .earth-title {
       position: relative;
       z-index: 2;
-      font-size: clamp(2rem, 8vw, 3.5rem); /* Ajuste responsivo */
+      font-size: 3.5rem; /* Desktop */
       font-weight: bold;
       text-align: center;
       text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
       color: white;
-      padding: 0 20px; /* Adicionado padding lateral */
-    }
-    @media (max-width: 768px) {
-      .earth-title {
-        font-size: 2.5rem;
-      }
     }
     .contact {
       position: relative;
       background-color: #000;
-      padding: 80px 20px; /* Padding reduzido */
+      padding: 100px 20px;
       overflow: hidden;
     }
     .contact::before {
@@ -565,11 +560,11 @@
     }
     .contact-content {
       text-align: center;
-      margin-bottom: 40px; /* Margem reduzida */
+      margin-bottom: 60px;
     }
     .contact .section-title {
-      font-size: clamp(1.8rem, 6vw, 2.5rem); /* Ajuste responsivo */
-      margin-bottom: 15px;
+      font-size: 2.5rem; /* Desktop */
+      margin-bottom: 20px;
       background: linear-gradient(20deg, var(--primary-color), #ff5100);
       -webkit-background-clip: text;
       background-clip: text;
@@ -577,15 +572,14 @@
     }
     .contact .section-subtitle {
       color: #aaa;
-      font-size: clamp(0.95rem, 3.5vw, 1.2rem); /* Ajuste responsivo */
+      font-size: 1.2rem; /* Desktop */
       max-width: 700px;
       margin: 0 auto;
       line-height: 1.6;
-      padding: 0 15px; /* Adicionado padding lateral */
     }
     .contact-info {
       background: rgba(20, 20, 20, 0.95);
-      padding: 30px; /* Padding reduzido */
+      padding: 50px;
       border-radius: 20px;
       backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 102, 0, 0.3);
@@ -596,13 +590,13 @@
     .social-links {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px; /* Gap reduzido */
-      margin-top: 20px; /* Margem reduzida */
+      gap: 25px;
+      margin-top: 30px;
     }
     .social-link {
       display: flex;
       align-items: center;
-      padding: 15px; /* Padding reduzido */
+      padding: 20px;
       border-radius: 12px;
       background: rgba(255, 255, 255, 0.08);
       color: white;
@@ -615,13 +609,13 @@
       --spotlight-color: rgba(255, 102, 0, 0.3);
     }
     .social-link i {
-      font-size: 1.8rem; /* Tamanho reduzido */
-      margin-right: 12px;
+      font-size: 2.2rem;
+      margin-right: 15px;
       color: var(--primary-color);
       transition: all 0.4s ease;
     }
     .social-link span {
-      font-size: clamp(0.9rem, 3vw, 1.1rem); /* Ajuste responsivo */
+      font-size: 1.1rem;
       font-weight: 600;
     }
     .social-link:hover {
@@ -654,145 +648,208 @@
       opacity: 1;
     }
 
+    .footer-separator {
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(
+            to right,
+            transparent,
+            rgba(255, 102, 0, 0.5),
+            transparent
+        );
+        margin-bottom: 30px;
+    }
+
+    .footer {
+        position: relative;
+        height: 100px;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        font-family: 'Bricolage Grotesque', cursive;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+    }
+
+    #footerSilkCanvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: block;
+    }
+
+    .footer-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+    }
+
+    .footer-text {
+        color: #ffffff;
+        font-size: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        font-family: 'Bricolage Grotesque', cursive;
+    }
+
+    .footer-github {
+        color: #ffffff;
+        text-decoration: none;
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .footer-github::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background: #ffffff;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-github:hover {
+        text-shadow: 0 0 15px #ffffff;
+    }
+
+    .footer-github:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    /* Media Queries para mobile */
     @media (max-width: 768px) {
+      .herozada h1 {
+        font-size: clamp(3rem, 15vw, 8rem);
+      }
+      .scroll-section h2 {
+        font-size: clamp(1.5rem, 5vw, 2rem);
+      }
+      .skills .section-subtitle {
+        font-size: clamp(1rem, 4vw, 1.2em);
+      }
+      .skills-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+      .skills-item {
+        width: 100%;
+        max-width: 300px;
+        padding: 15px;
+      }
+      .skills-title {
+        font-size: clamp(0.9rem, 3vw, 1.2em);
+      }
+      .skills-data {
+        font-size: clamp(0.8rem, 3vw, 1em);
+      }
+      .control-section h2 {
+        font-size: clamp(2rem, 10vw, 4.5rem);
+      }
+      .projects .section-title {
+        font-size: clamp(1.5rem, 5vw, 1.9rem);
+      }
+      .projects .section-subtitle {
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
+      }
+      .projects-grid {
+        gap: 20px;
+        padding: 10px;
+      }
+      .project-image {
+        height: 180px;
+      }
+      .project-info {
+        padding: 20px 15px;
+      }
+      .project-info h3 {
+        font-size: clamp(1.1rem, 4vw, 1.4rem);
+      }
+      .project-info p {
+        font-size: clamp(0.85rem, 3vw, 0.95rem);
+      }
+      .project-tag {
+        padding: 3px 8px;
+        font-size: 0.7rem;
+      }
+      .project-links {
+        gap: 10px;
+      }
+      .project-link {
+        padding: 7px 15px;
+        font-size: 0.85rem;
+      }
+      .earth-title {
+        font-size: clamp(2rem, 8vw, 3.5rem);
+      }
       .contact {
-        padding: 60px 15px; /* Padding reduzido */
+        padding: 80px 15px;
+      }
+      .contact .section-title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+      }
+      .contact .section-subtitle {
+        font-size: clamp(0.95rem, 3.5vw, 1.2rem);
       }
       .contact-info {
-        padding: 25px 20px; /* Padding reduzido */
-        max-width: 95%; /* Largura máxima aumentada */
+        padding: 40px 25px;
       }
       .social-links {
         grid-template-columns: 1fr;
-        gap: 15px; /* Gap reduzido */
+        gap: 15px;
       }
       .social-link {
-        padding: 14px; /* Padding reduzido */
+        padding: 18px;
       }
       .social-link i {
-        font-size: 1.7rem; /* Tamanho reduzido */
+        font-size: 1.7rem;
+      }
+      .social-link span {
+        font-size: 1rem;
+      }
+      .footer-text {
+        font-size: 1.2rem;
+      }
+      
+      /* Ajustes específicos para as esferas */
+      .control-section, .earth-section {
+        height: 40vh;
       }
     }
-
-.footer-separator {
-    width: 100%;
-    height: 1px;
-    background: linear-gradient(
-        to right,
-        transparent,
-        rgba(255, 102, 0, 0.5),
-        transparent
-    );
-    margin-bottom: 20px; /* Margem reduzida */
-}
-
-.footer {
-    position: relative;
-    height: 80px; /* Altura reduzida */
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    font-family: 'Bricolage Grotesque', cursive;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-}
-
-#footerSilkCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    display: block;
-}
-
-.footer-content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-}
-
-.footer-text {
-    color: #ffffff;
-    font-size: clamp(1rem, 4vw, 1.5rem); /* Ajuste responsivo */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-	font-family: 'Bricolage Grotesque', cursive;
-}
-
-.footer-github {
-    color: #ffffff;
-    text-decoration: none;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.footer-github::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background: #ffffff;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-}
-
-.footer-github:hover {
-    text-shadow: 0 0 15px #ffffff;
-}
-
-.footer-github:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-@media (max-width: 768px) {
-    .footer-text {
-        font-size: 1.1rem; /* Tamanho reduzido */
+    
+    /* Ajustes para telas muito pequenas */
+    @media (max-width: 480px) {
+      .skills-list {
+        grid-template-columns: 1fr;
+      }
+      .project-links {
+        flex-direction: column;
+      }
+      .project-link {
+        width: 100%;
+      }
     }
-}
-
-/* Media Queries Adicionais */
-@media (max-width: 480px) {
-  .skills-list {
-    grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
-    gap: 15px;
-  }
-  
-  .skills-item {
-    padding: 12px;
-  }
-  
-  .project-links {
-    flex-direction: column; /* Botões em coluna */
-    gap: 8px;
-  }
-  
-  .project-link {
-    width: 100%;
-  }
-}
-
-/* Melhorias para orientação paisagem em dispositivos móveis */
-@media (max-height: 500px) and (orientation: landscape) {
-  .herozada h1 {
-    font-size: 4rem;
-  }
-  
-  .herozada {
-    height: 150vh;
-  }
-  
-  .control-section {
-    height: 100vh;
-  }
-  
-  .earth-section {
-    height: 100vh;
-  }
-}
+    
+    /* Ajustes para paisagem em mobile */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .herozada h1 {
+        font-size: 4rem;
+      }
+      .herozada {
+        height: 150vh;
+      }
+      .control-section {
+        height: 100vh;
+      }
+      .earth-section {
+        height: 100vh;
+      }
+    }
