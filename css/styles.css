@@ -5,13 +5,23 @@
   --primary-color: #ff6600;
   --secondary-color: #1a1a1a;
   --text-color: #fff;
+  --hero-h1-size-min: 2.5rem;
+  --hero-h1-size-max: 8rem;
+  --skill-card-width-min: 160px;
+  --skill-card-width-max: 260px;
+  --project-card-width-min: 260px;
+  --project-card-width-max: 370px;
+  --section-padding-min: 10px;
+  --section-padding-max: 40px;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   user-select: none;
 }
+
 body, html {
   height: 100%;
   width: 100%;
@@ -22,23 +32,30 @@ body, html {
   scroll-behavior: smooth;
   color: var(--text-color);
 }
+
 ::-webkit-scrollbar {
   width: 10px;
   border-radius: 30px;
 }
+
 ::-webkit-scrollbar-track {
   background: #000;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #5c5c5c;
   border-radius: 35px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: #4a4a4a;
 }
+
 .fluido {
   font-size: clamp(1.2rem, 3vw, 3rem);
 }
+
+/* NAV */
 nav {
   position: fixed;
   top: 30px;
@@ -57,12 +74,14 @@ nav {
   z-index: 100;
   border: 1px solid rgba(255,102,0,0.2);
 }
+
 nav.scrolled {
   top: 15px;
   padding: 12px 25px;
   background: rgba(0, 0, 0, 0.9);
   box-shadow: 0 10px 30px rgba(255,102,0,0.1);
 }
+
 nav ul {
   list-style: none;
   display: flex;
@@ -70,10 +89,12 @@ nav ul {
   width: 70%;
   padding: 0;
 }
+
 nav li {
   font-weight: bold;
   margin: 0 15px;
 }
+
 nav a {
   text-decoration: none;
   color: white;
@@ -98,6 +119,7 @@ nav a::after {
 nav a:hover::after {
   transform: scaleX(1);
 }
+
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -114,10 +136,12 @@ nav a:hover::after {
   margin: 4px 0;
   transition: all 0.3s ease;
 }
+
+@media (max-width: 900px) {
+  nav { width: 90%; padding: 12px 20px;}
+}
 @media (max-width: 768px) {
   nav {
-    width: 90%;
-    padding: 12px 20px;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -138,6 +162,7 @@ nav a:hover::after {
   }
 }
 
+/* HERO */
 .herozada {
   position: relative;
   width: 100%;
@@ -174,8 +199,17 @@ nav a:hover::after {
   color: white;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
   white-space: nowrap;
-  font-size: 8rem;
+  font-size: clamp(var(--hero-h1-size-min), 13vw, var(--hero-h1-size-max));
+  left: 50%; top: 52%; transform: translate(-50%, -50%);
+  z-index: 2;
 }
+
+@media (max-width: 768px) {
+  .herozada h1 {
+    font-size: clamp(2.5rem, 13vw, 4rem);
+  }
+}
+
 @keyframes bounce {
   0%, 100% {
     transform: translateX(-50%) translateY(0);
@@ -197,12 +231,21 @@ nav a:hover::after {
   fill: #f8f8f8;
   animation: bounce 2s infinite;
   cursor: pointer;
+  z-index: 2;
 }
 .chev .chevron-down {
   display: block;
   width: var(--size);
   height: var(--size);
 }
+
+/* SECTION PADDINGS */
+section, .projects, .skills, .contact-info {
+  padding-left: clamp(var(--section-padding-min), 5vw, var(--section-padding-max));
+  padding-right: clamp(var(--section-padding-min), 5vw, var(--section-padding-max));
+}
+
+/* SCROLL SECTION */
 .scroll-section {
   position: relative;
   background-color: #000;
@@ -266,6 +309,8 @@ nav a:hover::after {
   padding: 0.2em 0.5em;
   z-index: 1;
 }
+
+/* SKILLS */
 .skills {
   padding: 1px 20px;
   text-align: center;
@@ -277,20 +322,24 @@ nav a:hover::after {
   margin-bottom: 10px;
 }
 .skills-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--skill-card-width-min)), var(--skill-card-width-max)));
+  gap: clamp(16px, 3vw, 33px);
   justify-content: center;
-  gap: 33px;
-  list-style: none;
-  padding: 0;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1100px;
 }
 .skills-item {
   background-color: var(--secondary-color);
   padding: 20px;
   border-radius: 10px;
-  width: 250px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
+  width: 100%;
+  max-width: var(--skill-card-width-max);
+  min-width: var(--skill-card-width-min);
+  margin: 0 auto;
 }
 .skills-item:hover {
   transform: translateY(-10px);
@@ -323,6 +372,8 @@ nav a:hover::after {
   width: 100%;
   transition: transform 2s ease-in-out;
 }
+
+/* CONTROL SECTION */
 .control-section {
   position: relative;
   height: 540px;
@@ -354,6 +405,8 @@ nav a:hover::after {
   font-family: 'Geist', sans-serif;
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
 }
+
+/* PROJETOS */
 .projects {
   background-color: #000;
   padding: 7px 20px;
@@ -377,11 +430,13 @@ nav a:hover::after {
 }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--project-card-width-min)), var(--project-card-width-max)));
+  gap: clamp(18px, 3vw, 30px);
+  justify-content: center;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 0;
 }
 .project-card {
   background: linear-gradient(145deg, #111, var(--secondary-color));
@@ -390,6 +445,10 @@ nav a:hover::after {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
+  width: 100%;
+  max-width: var(--project-card-width-max);
+  min-width: var(--project-card-width-min);
+  margin: 0 auto;
 }
 .project-card:hover {
   transform: translateY(-10px);
@@ -482,6 +541,8 @@ nav a:hover::after {
 .project-card:hover::before {
   opacity: 1;
 }
+
+/* WAVES */
 .waves-container {
   position: absolute;
   top: 0;
@@ -498,6 +559,8 @@ nav a:hover::after {
   height: 100%;
   filter: blur(10px);
 }
+
+/* EARTH */
 .earth-section {
   position: relative;
   height: 57vh;
@@ -530,41 +593,9 @@ nav a:hover::after {
   .earth-title {
     font-size: 3rem;
   }
-  .herozada h1 {
-    font-size: 3rem !important;
-  }
-  .skills-list {
-    gap: 15px;
-    padding: 10px;
-  }
-  .skills-item {
-    width: calc(50% - 15px);
-    padding: 15px;
-    min-width: 140px;
-  }
-  .projects-grid {
-    gap: 15px;
-    padding: 10px;
-  }
-  .project-card {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  .project-info {
-    padding: 15px;
-  }
-  .project-image {
-    height: 160px;
-  }
 }
-@media (max-width: 480px) {
-  .skills-item {
-    width: 100%;
-  }
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
+
+/* CONTATO */
 .contact {
   position: relative;
   background-color: #000;
@@ -676,6 +707,7 @@ nav a:hover::after {
 .social-link:hover::before {
   opacity: 1;
 }
+
 @media (max-width: 768px) {
   .contact {
     padding: 80px 15px;
@@ -700,14 +732,16 @@ nav a:hover::after {
     font-size: 1rem;
   }
 }
+
+/* FOOTER */
 .footer-separator {
   width: 100%;
   height: 1px;
   background: linear-gradient(
-    to right,
-    transparent,
-    rgba(255, 102, 0, 0.5),
-    transparent
+      to right,
+      transparent,
+      rgba(255, 102, 0, 0.5),
+      transparent
   );
   margin-bottom: 30px;
 }
@@ -768,8 +802,22 @@ nav a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
+
 @media (max-width: 768px) {
   .footer-text {
     font-size: 1.2rem;
   }
+}
+
+/* SCROLL REVEAL (inserido pelo JS, mas já pode deixar no CSS) */
+.scroll-reveal-pre {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s cubic-bezier(.35,.97,.45,1), transform 0.8s cubic-bezier(.35,.97,.45,1);
+  will-change: opacity, transform;
+}
+.scroll-reveal {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto;
 }
