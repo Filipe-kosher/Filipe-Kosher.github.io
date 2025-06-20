@@ -21,19 +21,22 @@
   <script src="js/script.js" defer></script>
 </head>
 <body>
+
   <div class="menu-toggle" onclick="toggleMenu()">
     <span></span>
     <span></span>
     <span></span>
   </div>
+
   <nav>
     <ul>
-      <li><a href="#scroll-section">Habilidades</a></li>
-      <li><a href="#projects">Projetos</a></li>
-      <li><a href="#contact">Contato</a></li>
+      <li><a href="#scroll-section" onclick="closeMenu()">Habilidades</a></li>
+      <li><a href="#projects" onclick="closeMenu()">Projetos</a></li>
+      <li><a href="#contact" onclick="closeMenu()">Contato</a></li>
     </ul>
   </nav>
 
+  <!-- HERO -->
   <div class="herozada">
     <img src="a.gif" alt="background" />
     <h1 class="fluido">Filipe.</h1>
@@ -43,6 +46,7 @@
       </svg>
     </div>
   </div>
+
   <div class="scroll-section" id="scroll-section">
     <div class="waves-container">
       <canvas id="wavy-canvas" class="waves-canvas"></canvas>
@@ -63,6 +67,7 @@
       TUDO.</h2>
     </div>
   </div>
+
   <section class="skills">
     <h2 class="section-subtitle">Habilidades</h2>
     <ul class="skills-list">
@@ -113,106 +118,117 @@
       </li>
     </ul>
   </section>
+
   <section class="control-section">
     <div id="threejs-container"></div>
     <h2><span>O controle.</span></h2>
   </section>
-  <section class="projects" id="projects">
+
+<section class="projects" id="projects">
     <h2 class="section-title">Projetos Recentes</h2>
     <p class="section-subtitle">Alguns dos meus trabalhos mais recentes e desafios que enfrentei</p>
-    <div class="projects-grid">
-      <div class="project-card">
-        <img src="assets/screenshot1.png" alt="Projeto 1" class="project-image">
-        <div class="project-info">
-          <h3>Porfolio Kawe Vincente</h3>
-          <div class="project-tags">
-            <span class="project-tag">HTML</span>
-            <span class="project-tag">CSS</span>
-            <span class="project-tag">JavaScript</span>
-          </div>
-          <p>Site moderno, com visual deslumbrante e com um potencial enorme pra um portfolio</p>
-          <div class="project-links">
-            <a href="https://github.com/Filipe-kosher/vicente-portfolio" class="project-link project-link-secondary" target="_blank" rel="noopener">
-              <i class="fab fa-github"></i> Código
-            </a>
-          </div>
-        </div>
+    
+<div class="projects-grid">
+  <div class="project-card">
+    <img src="assets/screenshot1.png" alt="Projeto 1" class="project-image">
+    <div class="project-info">
+      <h3>Porfolio Kawe Vincente</h3>
+      <div class="project-tags">
+        <span class="project-tag">HTML</span>
+        <span class="project-tag">CSS</span>
+        <span class="project-tag">JavaScript</span>
       </div>
-      <div class="project-card">
-        <img src="assets/screenshot2.png" alt="Projeto 2" class="project-image">
-        <div class="project-info">
-          <h3>Tabela periódica</h3>
-          <div class="project-tags">
-            <span class="project-tag">HTML5</span>
-            <span class="project-tag">CSS3</span>
-            <span class="project-tag">JavaScript</span>
-          </div>
-          <p>Um projeto educativo e intuitivo, com uma interface rápida e fácil de se interagir</p>
-          <div class="project-links">
-            <a href="https://github.com/Filipe-kosher/Tabela-periodica" class="project-link project-link-secondary" target="_blank" rel="noopener">
-              <i class="fab fa-github"></i> Código
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="project-card">
-        <img src="assets/screenshot3.png" alt="Projeto 3" class="project-image">
-        <div class="project-info">
-          <h3>Site Bio</h3>
-          <div class="project-tags">
-            <span class="project-tag">HTML5</span>
-            <span class="project-tag">CSS3</span>
-            <span class="project-tag">JavaScript</span>
-          </div>
-          <p>Site simples, bonito e otimizado.</p>
-          <div class="project-links">
-            <a href="https://github.com/Filipe-kosher/site-de-bio" class="project-link project-link-secondary" target="_blank" rel="noopener">
-              <i class="fab fa-github"></i> Código
-            </a>
-          </div>
-        </div>
+      <p>Site moderno, com visual deslumbrante e com um potencial enorme pra um portfolio</p>
+      <div class="project-links">
+        <a href="https://github.com/Filipe-kosher/vicente-portfolio" class="project-link project-link-secondary" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> Código
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+
+  <div class="project-card">
+    <img src="assets/screenshot2.png" alt="Projeto 2" class="project-image">
+    <div class="project-info">
+      <h3>Tabela periódica</h3>
+      <div class="project-tags">
+        <span class="project-tag">HTML5</span>
+        <span class="project-tag">CSS3</span>
+        <span class="project-tag">JavaScript</span>
+      </div>
+      <p>Um projeto educativo e intuitivo, com uma interface rápida e fácil de se interagir</p>
+      <div class="project-links">
+        <a href="https://github.com/Filipe-kosher/Tabela-periodica" class="project-link project-link-secondary" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> Código
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-card">
+    <img src="assets/screenshot3.png" alt="Projeto 3" class="project-image">
+    <div class="project-info">
+      <h3>Site Bio</h3>
+      <div class="project-tags">
+        <span class="project-tag">HTML5</span>
+        <span class="project-tag">CSS3</span>
+        <span class="project-tag">JavaScript</span>
+      </div>
+      <p>Site simples, bonito e otimizado.</p>
+      <div class="project-links">
+        <a href="https://github.com/Filipe-kosher/site-de-bio" class="project-link project-link-secondary" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> Código
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+  
+  <!-- SEÇÃO DA TERRA (igual à da Lua) -->
   <section class="earth-section">
     <div id="earth-container"></div>
     <h2 class="earth-title">Pegue o controle.</h2>
   </section>
-  <section class="contact" id="contact">
-    <div class="contact-container">
-      <div class="contact-content">
-        <h2 class="section-title">Entre em Contato</h2>
-        <p class="section-subtitle">Gostaria de colaborar ou tem alguma pergunta? Conecte-se comigo nas redes sociais!</p>
-      </div>
-      <div class="contact-info">
-        <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 20px;">Minhas Redes</h3>
-        <div class="social-links">
-          <a href="https://github.com/Filipe-Kosher" class="social-link" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-            <span>GitHub</span>
-          </a>
-          <a href="https://api.whatsapp.com/send?phone=5562985070491&text=Ol%C3%A1%20Filipe!%20estou%20interessado%20em%20fazer%20um%20projeto%20com%20voc%C3%AA." class="social-link" target="_blank" aria-label="WhatsApp">
-            <i class="fab fa-whatsapp"></i>
-            <span>WhatsApp</span>
-          </a>
-          <a href="https://discord.com/users/1193428032250191912" class="social-link" target="_blank" aria-label="Discord">
-            <i class="fab fa-discord"></i>
-            <span>Discord</span>
-          </a>
-          <a href="mailto:filipe@filipedev.pro" class="social-link" target="_blank" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-            <span>Email</span>
-          </a>
-        </div>
+
+  <!-- SEÇÃO DE CONTATO -->
+<section class="contact" id="contact">
+  <div class="contact-container">
+    <div class="contact-content">
+      <h2 class="section-title">Entre em Contato</h2>
+      <p class="section-subtitle">Gostaria de colaborar ou tem alguma pergunta? Conecte-se comigo nas redes sociais!</p>
+    </div>
+    <div class="contact-info">
+      <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 20px;">Minhas Redes</h3>
+      <div class="social-links">
+        <a href="https://github.com/Filipe-Kosher" class="social-link" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+        </a>
+        <a href="https://api.whatsapp.com/send?phone=5562985070491&text=Ol%C3%A1%20Filipe!%20estou%20interessado%20em%20fazer%20um%20projeto%20com%20voc%C3%AA." class="social-link" target="_blank" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+        <a href="https://discord.com/users/1193428032250191912" class="social-link" target="_blank" aria-label="Discord">
+          <i class="fab fa-discord"></i>
+          <span>Discord</span>
+        </a>
+        <a href="mailto:filipe@filipedev.pro" class="social-link" target="_blank" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+          <span>Email</span>
+        </a>
       </div>
     </div>
-  </section>
-  <div class="footer-separator"></div>
-  <footer class="footer">
+  </div>
+</section>
+  
+<div class="footer-separator"></div>
+<footer class="footer">
     <canvas id="footerSilkCanvas"></canvas>
     <div class="footer-content">
-      <p class="footer-text">&copy; 2025 • Desenvolvido por <a href="https://github.com/Filipe-kosher" class="footer-github" target="_blank" rel="noopener noreferrer">Filipe</a></p>
+        <p class="footer-text">&copy; 2025 • Desenvolvido por <a href="https://github.com/Filipe-kosher" class="footer-github" target="_blank" rel="noopener noreferrer">Filipe</a></p>
     </div>
-  </footer>
+</footer>
 </body>
 </html>
