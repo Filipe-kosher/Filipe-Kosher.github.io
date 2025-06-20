@@ -81,8 +81,13 @@
       }
     });
 
+    // CORREÇÃO: Funções para abrir/fechar menu mobile
     function toggleMenu() {
       document.querySelector('nav').classList.toggle('active');
+    }
+    
+    function closeMenu() {
+      document.querySelector('nav').classList.remove('active');
     }
     
     // Pointer Highlight animation
@@ -213,9 +218,12 @@
       }
 
       initSphere() {
+        const isMobile = window.innerWidth <= 768;
+        const sphereSize = isMobile ? 7 : 10; // Tamanho menor no celular
+        
         var texloader = new THREE.TextureLoader();
         texloader.load(img, (tex) => {
-          let geometry = new THREE.SphereGeometry(10, 22, 22);
+          let geometry = new THREE.SphereGeometry(sphereSize, 22, 22);
           let material = new THREE.MeshPhongMaterial({
             color: 0xB2B2B2,
             normalMap: tex,
@@ -263,8 +271,10 @@
 
         // Create earth - usando menos segmentos em mobile
         const segments = this.isMobile ? 32 : 64;
+        const earthSize = this.isMobile ? 0.7 : 1; // Tamanho menor no celular
+        
         this.earth = new THREE.Mesh(
-          new THREE.SphereGeometry(1, segments, segments),
+          new THREE.SphereGeometry(earthSize, segments, segments),
           earthMaterial
         );
         this.earth.position.set(0, 0, 0);
@@ -504,7 +514,7 @@ document.addEventListener('DOMContentLoaded', function() {
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth' });
-        document.querySelector('nav').classList.remove('active');
+        closeMenu();
       }
     });
   });
