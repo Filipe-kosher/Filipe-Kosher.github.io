@@ -1,4 +1,3 @@
-    // Main wavy animation
     (function() {
       var canvas = document.getElementById('wavy-canvas');
       var ctx = canvas.getContext('2d');
@@ -52,15 +51,13 @@
       render();
     })();
 
-    // Unified scroll effect
     window.addEventListener('scroll', function() {
       const scrollPosition = window.scrollY;
       const canvas = document.getElementById('wavy-canvas');
       const scrollSection = document.querySelector('.scroll-section');
       const h2 = document.querySelector('.control-section h2');
       const earthTitle = document.querySelector('.earth-title');
-      
-      // Parallax for waves
+
       if (canvas) {
         const parallaxOffset = scrollPosition * 0.3;
         canvas.style.transform = `translateY(${parallaxOffset}px)`;
@@ -70,18 +67,15 @@
         canvas.style.opacity = opacity;
       }
       
-      // Parallax for heading
       if (h2) {
         h2.style.transform = `translateY(${scrollPosition * 0.3}px)`;
       }
-      
-      // Parallax for earth title
+
       if (earthTitle) {
         earthTitle.style.transform = `translateY(${scrollPosition * 0.3}px)`;
       }
     });
 
-    // CORREÇÃO: Funções para abrir/fechar menu mobile
     function toggleMenu() {
       document.querySelector('nav').classList.toggle('active');
     }
@@ -90,7 +84,6 @@
       document.querySelector('nav').classList.remove('active');
     }
     
-    // Pointer Highlight animation
     document.addEventListener('DOMContentLoaded', function() {
       const highlightWrapper = document.querySelector('.pointer-highlight-wrapper');
       if (!highlightWrapper) return;
@@ -137,7 +130,6 @@
       }
     });
 
-    // Three.js Sphere (Lua)
     const img = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/06a094a4-7bd7-4bb9-b998-6c1e17f66c08/dbcju0k-b9b333e1-dd8d-4657-90db-7d3e7e179843.png';
 
     class App {
@@ -236,7 +228,6 @@
       }
     }
 
-    // Earth Animation
     class EarthApp {
       constructor() {
         this.renderer = undefined;
@@ -255,7 +246,6 @@
         this.scene = new THREE.Scene();
         this.scene.background = new THREE.Color(0x000000);
 
-        // Earth material
         const textureLoader = new THREE.TextureLoader();
         const earthMap = "https://threejs.org/examples/textures/land_ocean_ice_cloud_2048.jpg";
         
@@ -269,9 +259,8 @@
           emissiveIntensity: 0.1
         });
 
-        // Create earth - usando menos segmentos em mobile
         const segments = this.isMobile ? 32 : 64;
-        const earthSize = this.isMobile ? 0.7 : 1; // Tamanho menor no celular
+        const earthSize = this.isMobile ? 0.7 : 1; 
         
         this.earth = new THREE.Mesh(
           new THREE.SphereGeometry(earthSize, segments, segments),
@@ -280,7 +269,6 @@
         this.earth.position.set(0, 0, 0);
         this.scene.add(this.earth);
 
-        // Lights
         const ambientLight = new THREE.AmbientLight(0xffffff, 0.3);
         this.scene.add(ambientLight);
 
@@ -288,17 +276,15 @@
         this.pointLight.position.set(-5, 2, 0);
         this.scene.add(this.pointLight);
 
-        // Camera
         this.initCamera();
         this.initRenderer();
         this.createCanvas();
         
-        // IntersectionObserver para pausar quando não estiver visível
         this.visible = true;
         this.observer = new IntersectionObserver((entries) => {
           this.visible = entries[0].isIntersecting;
           if (this.visible) {
-            this.render(); // Reinicia a animação quando visível
+            this.render(); 
           }
         }, { threshold: 0.1 });
         this.observer.observe(this.container);
@@ -314,7 +300,7 @@
 
       initRenderer() {
         this.renderer = new THREE.WebGLRenderer({ 
-          antialias: !this.isMobile, // Desativar antialias em mobile
+          antialias: !this.isMobile, 
           alpha: true 
         });
         this.renderer.setClearColor(0x000000, 0);
@@ -352,13 +338,11 @@
       }
     }
 
-    // Initialize Three.js apps when everything is loaded
     window.addEventListener('load', () => {
-      new App(); // Lua
-      new EarthApp(); // Terra
+      new App();
+      new EarthApp(); 
     });
 	
-    // Social links spotlight effect
     document.querySelectorAll('.social-link').forEach(button => {
       button.addEventListener('mousemove', (e) => {
         const rect = button.getBoundingClientRect();
@@ -370,8 +354,6 @@
       });
     });
 	
-	// Adicione este código no final do seu arquivo JavaScript existente
-// Adicione este código no final do seu arquivo JavaScript
 function hexToNormalizedRGB(hex) {
     hex = hex.replace("#", "");
     return [
@@ -501,7 +483,6 @@ class FooterSilkEffect {
     }
 }
 
-// Inicialize o efeito do footer quando a página carregar
 window.addEventListener('load', () => {
     new FooterSilkEffect();
 });
@@ -520,16 +501,13 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// SCROLL REVEAL para cada section, exceto .herozada
 document.addEventListener('DOMContentLoaded', function() {
-  // Seleciona apenas as sections e .scroll-section (não .herozada)
   const sections = document.querySelectorAll('section, .scroll-section:not(.herozada)');
 
   sections.forEach(section => {
     section.classList.add('scroll-reveal-pre');
   });
 
-  // CSS da animação
   const style = document.createElement('style');
   style.innerHTML = `
     .scroll-reveal-pre {
@@ -546,7 +524,6 @@ document.addEventListener('DOMContentLoaded', function() {
   `;
   document.head.appendChild(style);
 
-  // Reveal com IntersectionObserver
   if ('IntersectionObserver' in window) {
     let observer = new IntersectionObserver((entries, obs) => {
       entries.forEach(entry => {
@@ -558,7 +535,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }, { threshold: 0.2 });
     sections.forEach(section => observer.observe(section));
   } else {
-    // fallback scroll
     function revealSectionsOnScroll() {
       sections.forEach(section => {
         const rect = section.getBoundingClientRect();
