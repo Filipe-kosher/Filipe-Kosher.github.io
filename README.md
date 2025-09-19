@@ -10,11 +10,9 @@
 - CSS3  
 - JavaScript
 - Threejs
-- GSAP
-- CanvasAPI
-- GLSL
+- jQuery (3.6.0)
+- Slick Carousel
 - Font Awesome
-- Modern Normalize
 
 ---
 
