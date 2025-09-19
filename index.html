@@ -1,0 +1,1434 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio Filipe</title>
+<meta name="description" content="Portfólio de Filipe: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte. Veja meus projetos e habilidades!">
+<meta name="keywords" content="portfólio, filipe, desenvolvedor, web, UI, UX, projetos, programação, frontend, backend, javascript, react, node, design, dev, brasil">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://filipedev.pro">
+<meta property="og:title" content="Portfólio Filipe">
+<meta property="og:description" content="Portfólio de Memphis: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://filipedev.pro/">
+<meta property="og:locale" content="pt_BR">
+<link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+<style>
+    body {
+        margin: 0;
+        overflow-x: hidden;
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        color: #fff;
+    }
+	
+	html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #231F20;
+}
+
+    .menu-btn-container {
+      position: fixed;
+      width: 100%;
+      top: 1.5rem;
+      left: 0;
+      z-index: 10;
+    }
+    .menu-btn {
+      display: block;
+      margin-inline-start: auto;
+      margin-right: 1.5rem;
+      border: 1px solid #c0c0c02f;
+      inline-size: 132px;
+      padding-block: 0.5rem;
+      border-radius: 3rem;
+      text-decoration: none;
+      background-color: #161211;
+      color: #fff;
+      cursor: pointer;
+      font-stretch: 125%;
+      font-weight: 900;
+      font-size: 1.35rem;
+      transition: 0.3s all ease-in-out;
+    }
+
+    .nav {
+      min-block-size: 100vh;
+      position: fixed;
+      width: 100%;
+      background-color: #0a0a12;
+      background-image: 
+        radial-gradient(at 60% 31%, rgba(70, 40, 160, 0.45) 0px, transparent 50%),
+        radial-gradient(at 48% 98%, rgba(30, 80, 160, 0.4) 0px, transparent 50%),
+        radial-gradient(at 84% 67%, rgba(120, 50, 150, 0.3) 0px, transparent 50%),
+        radial-gradient(at 16% 47%, rgba(25, 130, 200, 0.35) 0px, transparent 50%),
+        radial-gradient(at 73% 11%, rgba(50, 30, 90, 0.45) 0px, transparent 50%),
+        radial-gradient(at 49% 37%, rgba(90, 60, 180, 0.3) 0px, transparent 50%),
+        radial-gradient(at 70% 21%, rgba(20, 140, 160, 0.25) 0px, transparent 50%);
+      transition: 450ms cubic-bezier(0.86, 0, 0.07, 1);
+      z-index: 8;
+      overflow: hidden;
+    }
+
+    .nav.hidden {
+      visibility: hidden;
+      transform: translateX(-100%);
+    }
+
+    .nav-items {
+      position: absolute;
+      top: 50%;
+      left: 15%;
+      transform: translateY(-50%) translateX(-15%);
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-item:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    .nav-item a {
+      display: inline-block;
+      font-size: 2.45rem;
+      text-decoration: none;
+      color: #fff;
+      font-stretch: 125%;
+      font-weight: 900;
+      transition: color 0.2s;
+    }
+
+    .nav-item a:after {
+      content: "";
+      display: block;
+      height: 0.5rem;
+      width: 100%;
+      transform: scale(0);
+      transform-origin: left;
+      background-color: white;
+      transition: transform 250ms cubic-bezier(0.86, 0, 0.07, 1);
+    }
+
+    .nav-item a:hover:after,
+    .nav-item a:focus:after {
+      transform: scale(1);
+    }
+
+    .nav canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      mix-blend-mode: overlay;
+      opacity: 0.08;
+    }
+
+    @media (max-width: 700px) {
+      .menu-btn { font-size: 1.1rem; padding: 16px 48px; }
+      .nav-items { left: 10%; transform: translateY(-50%) translateX(-10%); }
+      .nav-item a { font-size: 2rem; }
+    }
+
+    @media (max-width: 485px) {
+      .menu-btn { font-size: 1rem; padding: 14px 38px; }
+      .nav-items { left: 4%; transform: translateY(-50%) translateX(-4%); }
+      .nav-item a { font-size: 1.4rem; }
+    }
+
+    .hero {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    .hero-title {
+        font-family: 'Story Script', cursive;
+        font-size: 94px;
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 4px 32px rgba(0,0,0,0.25);
+        line-height: 1;
+        position: relative;
+        z-index: 3;
+    }
+
+    .gradient-separator {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 86vh;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000 100%);
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    canvas {
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    .second-section {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        background-color: #000;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 60px 20px 40px 20px;
+        z-index: 1;
+    }
+
+    .second-section .content {
+        max-width: 1200px; 
+        width: 100%;
+        text-align: center;
+        margin-top: 40px;
+        padding: 0;
+    }
+
+    .second-section h2, .second-section p {
+        font-family: 'Libertinus Serif Display', serif;
+    }
+
+    .second-section h2 {
+        font-size: 52px;
+        margin-bottom: 18px;
+        margin-top: 0;
+        letter-spacing: 1px;
+        font-weight: 700;
+        color: #e0e0ff;
+        text-shadow: 0 2px 16px rgba(38,27,245,0.12);
+    }
+
+    .second-section p {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    .pointer-highlight-container {
+        position: relative;
+        display: inline-block;
+    }
+    .highlight-text {
+        font-weight: bold;
+        font-size: 1em;
+        position: relative;
+        z-index: 1;
+    }
+    .highlight-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 0;
+        overflow: visible;
+    }
+    .highlight-rectangle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 2px solid #261bf5;
+        border-radius: 8px;
+        background: rgba(38, 27, 245, 0.10);
+        width: 0;
+        height: 0;
+        transition: width 0.8s ease, height 0.8s ease;
+    }
+    .pointer-arrow {
+        position: absolute;
+        width: 0.7em;
+        height: 0.7em;
+        fill: #261bf5;
+        transform: rotate(-90deg);
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.8s ease;
+    }
+
+    .carousel-container {
+        position: relative;
+        display: block;
+        height: 420px;
+        max-width: 1000px;
+        margin: 40px auto 0 auto;
+    }
+
+    .projects-carousel {
+        margin: auto;
+        padding: 30px 0 0 0;
+    }
+
+    .carousel__slide {
+        width: 280px;
+        padding: 15px;
+        margin: 0 15px;
+        border-radius: 16px;
+        background: rgba(220, 220, 230, 0.30);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        color: #222;
+        transform: scale(0.85);
+        transition: all 400ms ease-in-out;
+    }
+
+    .slick-current .carousel__slide {
+        transform: scale(1);
+        border-color: rgba(255, 255, 255, 0.18);
+        box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(38,27,245,0.04);
+    }
+	
+    .carousel__visual {
+        height: 200px;
+        overflow: hidden;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .carousel__visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .carousel__content {
+        position: relative;
+        padding: 0 5px;
+    }
+
+    .carousel__content h3 {
+        margin-top: 10px;
+        margin-bottom: 8px;
+        font-family: 'Libertinus Serif Display', serif;
+        font-size: 22px;
+        color: #fff;
+    }
+
+    .carousel__content p {
+        font-size: 14px;
+        color: #aaa;
+        margin: 0 0 10px;
+        line-height: 1.4;
+    }
+
+    .carousel__content .chip-tags {
+        margin-bottom: 12px;
+    }
+
+    .carousel__content .chip-tags span {
+        display: inline-block;
+        background: #eee;
+        color: #333;
+        padding: 4px 10px;
+        border-radius: 6px;
+        margin: 2px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .carousel__content .chip-links a {
+        margin-right: 10px;
+        font-size: 18px;
+        color: #a8a2ff;
+        transition: color 0.3s ease;
+    }
+
+    .carousel__content .chip-links a:hover {
+        color: #fff;
+    }
+
+    .nav__prev, .nav__next {
+        background: rgba(25, 25, 40, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        color: #a8a2ff;
+        z-index: 2;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .nav__prev:hover, .nav__next:hover {
+        color: #fff;
+        border-color: #261bf5;
+        background: rgba(38, 27, 245, 0.2);
+    }
+
+    .nav__prev {
+        left: -20px;
+    }
+
+    .nav__next {
+        right: -20px;
+    }
+
+    @media (max-width: 600px) {
+        .carousel__slide {
+            width: 100%;
+            min-width: 0;
+            max-width: 100%;
+            padding: 10px;
+        }
+        .carousel__visual {
+            height: 120px;
+        }
+        .carousel__content h3 {
+            font-size: 1.1rem;
+        }
+    }
+
+    .third-section {
+        position: relative;
+        width: 100%;
+        background: #000;
+        padding: 10px 0 40px 0; 
+        z-index: 1;
+    }
+    .features-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        border-left: 1px solid #333;
+        border-top: 1px solid #333;
+    }
+    @media(min-width: 768px) {
+        .features-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media(min-width: 1024px) {
+        .features-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+    .feature {
+        position: relative;
+        padding: 40px 20px;
+        border-right: 1px solid #333;
+        border-bottom: 1px solid #333;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s forwards;
+    }
+    .feature:nth-child(1) { animation-delay: 0s; }
+    .feature:nth-child(2) { animation-delay: 0.1s; }
+    .feature:nth-child(3) { animation-delay: 0.2s; }
+    .feature:nth-child(4) { animation-delay: 0.3s; }
+    .feature:nth-child(5) { animation-delay: 0.4s; }
+    .feature:nth-child(6) { animation-delay: 0.5s; }
+    .feature:nth-child(7) { animation-delay: 0.6s; }
+    .feature:nth-child(8) { animation-delay: 0.7s; }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .feature:hover .overlay-top,
+    .feature:hover .overlay-bottom {
+      opacity: 1;
+    }
+    .overlay-top,
+    .overlay-bottom {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 1;
+    }
+    .overlay-top {
+      top: 0;
+      background: linear-gradient(to top, #111, transparent);
+    }
+    .overlay-bottom {
+      bottom: 0;
+      background: linear-gradient(to bottom, #111, transparent);
+    }
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 20px;
+      fill: #aaa;
+      transition: fill 0.3s;
+      z-index: 2;
+    }
+    .feature:hover .feature-icon {
+      fill: #261bf5;
+    }
+    .feature-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 10px;
+      color: #eee;
+      z-index: 2;
+    }
+    .feature-title::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 24px;
+      width: 4px;
+      background-color: #555;
+      border-radius: 0 12px 12px 0;
+      transition: all 0.3s;
+    }
+    .feature:hover .feature-title::before {
+      height: 32px;
+      background-color: #261bf5;
+    }
+    .feature-description {
+      font-size: 14px;
+      max-width: 250px;
+      color: #aaa;
+      z-index: 2;
+    }
+
+.skills-section {
+  position: relative;
+  width: 100%;
+  background: #000;
+  padding: 60px 20px;
+  z-index: 1;
+}
+
+.skills-title {
+  font-family: 'Libertinus Serif Display', serif;
+  font-size: 44px;
+  color: #e0e0ff;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 0;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-shadow: 0 2px 16px rgba(38,27,245,0.12);
+}
+
+.scroll {
+  position: relative;
+  display: flex;
+  width: min(90vw, 900px);
+  margin: 20px auto;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+}
+
+.scroll div {
+  white-space: nowrap;
+  animation: animate var(--t) linear infinite;
+  animation-delay: calc(var(--t) / -1);
+}
+
+.scroll div:nth-child(2) {
+  animation: animate2 var(--t) linear infinite;
+  animation-delay: calc(var(--t) / -2);
+}
+
+@keyframes animate {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes animate2 {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-200%); }
+}
+
+.scroll div span {
+  display: inline-flex;
+  margin: 10px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: rgba(25,25,40,0.5);
+  color: #e0e0ff;
+  box-shadow: 0 0 10px rgba(38,27,245,0.25);
+  transition: 0.4s;
+}
+
+.scroll div span:hover {
+  background: #261bf5;
+  box-shadow: 0 0 16px rgba(38,27,245,0.6);
+  cursor: pointer;
+}
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.project-chip {
+  flex: 1 1 300px;
+  max-width: 320px;
+  background: #000;
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 14px;
+  box-sizing: border-box;
+}
+
+.project-chip:hover {
+  transform: translateY(-4px);
+  border-color: #bbb; 
+}
+
+.project-chip img {
+  border-radius: 8px;
+  margin-bottom: 12px;
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.chip-content h3 {
+  margin: 0 0 6px;
+  font-size: 18px;
+  color: #fff; 
+}
+
+.chip-content p {
+  font-size: 14px;
+  color: #555;
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+.chip-tags {
+  margin-bottom: 12px;
+}
+
+.chip-tags span {
+  display: inline-block;
+  background: #eee;
+  color: #333;
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin: 2px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.chip-links a {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #555;
+  transition: color 0.2s;
+}
+
+.chip-links a:hover {
+  color: #000;
+}
+
+@media(max-width: 768px) {
+  .projects-grid {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  .project-chip {
+    flex: 0 0 auto;
+  }
+}
+
+.contact-section {
+  position: relative;
+  width: 100%;
+  background: #000;
+  padding: 80px 20px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-card {
+  background: rgba(25,25,40,0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.contact-card h2 {
+  font-family: 'Libertinus Serif Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #e0e0ff;
+  text-shadow: 0 2px 16px rgba(38,27,245,0.2);
+}
+
+.contact-card p {
+  font-size: 1.1rem;
+  color: #aaa;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #261bf5, #4338ca);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(38,27,245,0.4);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(38,27,245,0.7);
+}
+
+.social-links {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  justify-content: center;
+  color: #e0e0ff;
+  background: rgba(30,30,40,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px) scale(1.1);
+  background: rgba(38,27,245,0.2);
+  border-color: #261bf5;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.5rem;
+    padding: 0 10px;
+  }
+  .second-section h2 {
+    font-size: 2rem;
+  }
+  .projects-grid {
+    flex-wrap: wrap !important;
+    overflow-x: visible !important;
+    gap: 24px !important;
+    padding-bottom: 0 !important;
+  }
+  .project-chip {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 10px;
+  }
+  .skills-title {
+    font-size: 2rem;
+  }
+  .contact-card {
+    padding: 1.5rem 0.5rem;
+  }
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
+  }
+  .social-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+  .carousel__slide {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 10px;
+  }
+  .carousel__visual {
+    height: 120px;
+  }
+  .carousel__content h1 {
+    font-size: 1.1rem;
+  }
+}
+
+:focus {
+  outline: 2px solid #261bf5;
+  outline-offset: 2px;
+}
+
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  .skills-title {
+    font-size: 1.2rem;
+  }
+}
+.scroll-reveal-pre {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s cubic-bezier(.35,.97,.45,1), transform 0.8s cubic-bezier(.35,.97,.45,1);
+  will-change: opacity, transform;
+}
+.scroll-reveal {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  pointer-events: auto;
+}
+</style>
+</head>
+<body>
+
+    <div class="menu-btn-container">
+        <button type="button" class="menu-btn">menu</button>
+    </div>
+
+    <nav class="nav hidden">
+        <canvas></canvas>
+        <ol class="nav-items">
+            <li class="nav-item"><a href="#home">Home</a></li>
+            <li class="nav-item"><a href="#work">Meu trabalho</a></li>
+            <li class="nav-item"><a href="#skills">Skills</a></li>
+            <li class="nav-item"><a href="#contact" data-focused="last-focused">Contato</a></li>
+        </ol>
+    </nav>
+
+    <div class="hero" id="home">
+        <h1 class="hero-title">Filipe.</h1>
+        <canvas id="silkCanvas"></canvas>
+        <div class="gradient-separator"></div>
+    </div>
+
+    <section class="second-section" id="work">
+        <div class="content">
+            <h2>Criando projetos <span class="pointer-highlight-container">
+                <span class="highlight-text">envolventes</span>
+                <span class="highlight-overlay">
+                    <span class="highlight-rectangle"></span>
+                    <svg class="pointer-arrow" viewBox="0 0 16 16">
+                        <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"/>
+                    </svg>
+                </span>
+            </span>.</h2>
+			
+            <div class="carousel-container">
+                <div class="projects-carousel" id="projects-carousel">
+                    <div>
+                        <div class="carousel__slide">
+                            <div class="carousel__visual">
+                                <img src="https://raw.githubusercontent.com/Filipe-kosher/site-de-bio/main/screenshot.png" alt="Site bio">
+                            </div>
+                            <div class="carousel__content">
+                                <h3>Site bio</h3>
+                                <p>Site one-page para bio de redes sociais</p>
+                                <div class="chip-tags">
+                                    <span>HTML</span><span>CSS</span><span>JS</span>
+                                </div>
+                                <div class="chip-links" role="navigation" aria-label="Links do projeto">
+                                    <a href="https://github.com/Filipe-kosher/site-de-bio" target="_blank"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="carousel__slide">
+                            <div class="carousel__visual">
+                                <img src="https://raw.githubusercontent.com/Filipe-kosher/MemphisX-V1/main/screenshot.png" alt="Projeto MemphisX V1">
+                            </div>
+                            <div class="carousel__content">
+                                <h3>MemphisX V1</h3>
+                                <p>Otimizador que detecta todas as peças do computador de forma automática e aplica ajustes para obter o maior desempenho.</p>
+                                <div class="chip-tags">
+                                    <span>HTML</span><span>CSS</span><span>JS</span><span>Batch</span><span>Powershell</span><span>VBScript</span>
+                                </div>
+                                <div class="chip-links" role="navigation" aria-label="Links do projeto">
+                                    <a href="https://github.com/Filipe-kosher/MemphisX-V1" target="_blank"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="carousel__slide">
+                            <div class="carousel__visual">
+                                <img src="https://raw.githubusercontent.com/Filipe-kosher/vicente-portfolio/main/screenshot.png" alt="Projeto Vincente Portfólio">
+                            </div>
+                            <div class="carousel__content">
+                                <h3>Portfólio Kawe Vincente</h3>
+                                <p>Um portfólio visualmente impressionante, aplicando boas práticas e visando o desempenho.</p>
+                                <div class="chip-tags">
+                                    <span>HTML</span><span>CSS</span><span>JS</span>
+                                </div>
+                                <div class="chip-links" role="navigation" aria-label="Links do projeto">
+                                    <a href="https://github.com/Filipe-kosher/vicente-portfolio" target="_blank"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="carousel__slide">
+                            <div class="carousel__visual">
+                                <img src="https://raw.githubusercontent.com/Filipe-kosher/Hybrix_IA/main/screenshot.png" alt="Projeto Hybrix IA">
+                            </div>
+                            <div class="carousel__content">
+                                <h3>Hybrix IA</h3>
+                                <p>Uma IA avançada, com funcionalidades inovadoras e com geração automática de insights.</p>
+                                <div class="chip-tags">
+                                    <span>Python 3</span><span>API Rest</span><span>Pandas</span><span>Matplotlib</span><span>PyQt6</span><span>Faiss</span><span>Requests</span>
+                                </div>
+                                <div class="chip-links" role="navigation" aria-label="Links do projeto">
+                                    <a href="https://github.com/Filipe-kosher/Hybrix_IA" target="_blank"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="carousel__slide">
+                            <div class="carousel__visual">
+                                <img src="https://raw.githubusercontent.com/Filipe-kosher/Hybrix-Site/main/screenshot.png" alt="Projeto Hybrix Site">
+                            </div>
+                            <div class="carousel__content">
+                                <h3>Hybrix Website</h3>
+                                <p>Um website fictício da minha inteligência artificial, Hybrix.</p>
+                                <div class="chip-tags">
+                                    <span>HTML</span><span>CSS</span><span>JS</span><span>ThreeJS</span><span>Font Awesome</span>
+                                </div>
+                                <div class="chip-links" role="navigation" aria-label="Links do projeto">
+                                    <a href="https://github.com/Filipe-kosher/Hybrix-Site" target="_blank"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="carousel__slide">
+                            <div class="carousel__visual">
+                                <img src="https://raw.githubusercontent.com/Filipe-kosher/HyzeN-Solutions/main/screenshot.png" alt="Projeto HyzeN Solutions">
+                            </div>
+                            <div class="carousel__content">
+                                <h3>HyzeN Solutions Site</h3>
+                                <p>Um site direto, rápido e responsivo. Focado em alta conversão.</p>
+                                <div class="chip-tags">
+                                    <span>HTML</span><span>CSS</span><span>JS</span><span>Font Awesome</span>
+                                </div>
+                                <div class="chip-links" role="navigation" aria-label="Links do projeto">
+                                    <a href="https://github.com/Filipe-kosher/HyzeN-Solutions" target="_blank"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class='nav__prev'><i class="fas fa-chevron-left"></i></div>
+                <div class='nav__next'><i class="fas fa-chevron-right"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="third-section" id="blog">
+        <div class="content">
+            <h2 style="font-family: 'Libertinus Serif Display', serif; font-size: 44px; color: #e0e0ff; text-align: center; margin-bottom: 18px; margin-top: 0; letter-spacing: 1px; font-weight: 700; text-shadow: 0 2px 16px rgba(38,27,245,0.12);">Relacionamento com o Cliente</h2>
+            <div class="features-grid"></div>
+        </div>
+    </section>
+
+<section class="skills-section" id="skills">
+    <div class="content">
+      <h2 class="skills-title">Habilidades</h2>
+  
+      <div class="scroll" style="--t:18s">
+        <div>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>Javascript</span>
+          <span>Vite JS</span>
+          <span>Node JS</span>
+		  <span>Tauri JS</span>
+		  <span>Neu JS</span>
+          <span>SQL</span>
+          <span>MongoDB</span>
+          <span>Batch</span>
+		  <span>Python 3</span>
+          <span>Pyside6</span>
+		  <span>Jquery</span>
+		  <span>Discord.js</span>
+		  <span>Discord.py</span>
+		  <span>Threejs</span>
+		  <span>GSAP</span>
+		  <span>Ogl</span>
+		  <span>VBScript</span>
+        </div>
+        <div>
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>Javascript</span>
+          <span>Vite JS</span>
+          <span>Node JS</span>
+		  <span>Tauri JS</span>
+		  <span>Neu JS</span>
+          <span>SQL</span>
+          <span>MongoDB</span>
+          <span>Batch</span>
+		  <span>Python 3</span>
+          <span>Pyside6</span>
+		  <span>Jquery</span>
+		  <span>Discord.js</span>
+		  <span>Discord.py</span>
+		  <span>Threejs</span>
+		  <span>GSAP</span>
+		  <span>Ogl</span>
+		  <span>VBScript</span>
+        </div>
+      </div>
+  
+      <div class="scroll" style="--t:18s">
+        <div>
+          <span>UI/UX</span>
+          <span>UI Expert</span>
+          <span>Bootstrap</span>
+          <span>Material UI</span>
+          <span>Tailwind</span>
+          <span>SCSS</span>
+		  <span>NPM</span>
+		  <span>Rest API</span>
+		  <span>SEO</span>
+        </div>
+        <div>
+          <span>UI/UX</span>
+          <span>UI Expert</span>
+          <span>Bootstrap</span>
+          <span>Material UI</span>
+          <span>Tailwind</span>
+          <span>SCSS</span>
+          <span>NPM</span>
+		  <span>Rest API</span>
+		  <span>SEO</span>
+      </div>
+      </div>
+    </div>
+  </section>
+
+<section class="contact-section">
+  <div id="contact" class="contact-card">
+    <h2>Fale Comigo</h2>
+    <p>Quer conversar sobre projetos, ideias ou colaborações? Estou à disposição!</p>
+
+    <a href="mailto:filipe@filipedev.pro">
+      <button class="cta-button" type="button">
+        <i class="fas fa-envelope"></i>
+        <span>Entrar em Contato</span>
+      </button>
+    </a>
+
+    <div class="social-links">
+      <a href="https://discord.com/users/1193428032250191912" class="social-btn discord" target="_blank" rel="noopener">
+        <i class="fab fa-discord"></i>
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=5562985070491&text=Ol%C3%A1%20Filipe!%20estou%20interessado%20em%20fazer%20um%20projeto%20com%20voc%C3%AA." class="social-btn whatsapp" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="https://github.com/Filipe-Kosher" class="social-btn github" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script>
+    const nav = document.querySelector(".nav");
+    const navMenu = document.querySelector(".nav-items");
+    const btnToggleNav = document.querySelector(".menu-btn");
+
+    const toggleNav = () => {
+      nav.classList.toggle("hidden");
+      document.body.classList.toggle("lock-screen");
+
+      if (nav.classList.contains("hidden")) {
+        btnToggleNav.textContent = "menu";
+      } else {
+        setTimeout(() => { btnToggleNav.textContent = "close"; }, 475);
+      }
+    };
+
+    btnToggleNav.addEventListener("click", toggleNav);
+    navMenu.addEventListener("click", (e) => {
+      if (e.target.localName === "a") toggleNav();
+    });
+
+    document.body.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !nav.classList.contains("hidden")) toggleNav();
+    });
+
+    const lastFocusedEl = document.querySelector('a[data-focused="last-focused"]');
+    document.body.addEventListener("keydown", (e) => {
+      if (e.key === "Tab" && document.activeElement === lastFocusedEl) {
+        e.preventDefault();
+        btnToggleNav.focus();
+      }
+    });
+
+    const canvas = nav.querySelector('canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+
+      function resizeCanvas() {
+        canvas.width = nav.clientWidth;
+        canvas.height = nav.clientHeight;
+      }
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+
+      function generateNoise() {
+        const imageData = ctx.createImageData(canvas.width, canvas.height);
+        const buffer = new Uint32Array(imageData.data.buffer);
+        const len = buffer.length;
+        for (let i = 0; i < len; i++) {
+          const shade = Math.random() * 255 | 0;
+          buffer[i] = (255 << 24) | (shade << 16) | (shade << 8) | shade;
+        }
+        ctx.putImageData(imageData, 0, 0);
+      }
+
+      function animateNoise() {
+        generateNoise();
+        requestAnimationFrame(animateNoise);
+      }
+
+      animateNoise();
+    }
+
+    function hexToNormalizedRGB(hex) {
+        hex = hex.replace("#", "");
+        return [
+            parseInt(hex.slice(0, 2), 16) / 255,
+            parseInt(hex.slice(2, 4), 16) / 255,
+            parseInt(hex.slice(4, 6), 16) / 255,
+        ];
+    }
+
+    const vertexShader = `
+        varying vec2 vUv;
+        varying vec3 vPosition;
+        void main() {
+            vPosition = position;
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+        }
+    `;
+
+    const fragmentShader = `
+        varying vec2 vUv;
+        varying vec3 vPosition;
+        uniform float uTime;
+        uniform vec3 uColor;
+        uniform float uSpeed;
+        uniform float uScale;
+        uniform float uRotation;
+        uniform float uNoiseIntensity;
+        const float e = 2.71828182845904523536;
+        float noise(vec2 texCoord) {
+            float G = e;
+            vec2 r = (G * sin(G * texCoord));
+            return fract(r.x * r.y * (1.0 + texCoord.x));
+        }
+        vec2 rotateUvs(vec2 uv, float angle) {
+            float c = cos(angle);
+            float s = sin(angle);
+            mat2 rot = mat2(c, -s, s, c);
+            return rot * uv;
+        }
+        void main() {
+            float rnd = noise(gl_FragCoord.xy);
+            vec2 uv = rotateUvs(vUv * uScale, uRotation);
+            vec2 tex = uv * uScale;
+            float tOffset = uSpeed * uTime;
+            tex.y += 0.03 * sin(8.0 * tex.x - tOffset);
+            float pattern = 0.6 + 0.4 * sin(5.0 * (tex.x + tex.y + cos(3.0 * tex.x + 5.0 * tex.y) + 0.02 * tOffset) + sin(20.0 * (tex.x + tex.y - 0.1 * tOffset)));
+            vec4 col = vec4(uColor, 1.0) * vec4(pattern) - rnd / 15.0 * uNoiseIntensity;
+            col.a = 1.0;
+            gl_FragColor = col;
+        }
+    `;
+
+    class SilkEffect {
+        constructor(options={}) {
+            this.options = {
+                speed: options.speed || 2,
+                scale: options.scale || 1,
+                color: options.color || "#261bf5",
+                noiseIntensity: options.noiseIntensity || 0.5,
+                rotation: options.rotation || 0
+            };
+            this.init();
+        }
+
+        init() {
+            this.scene = new THREE.Scene();
+            this.camera = new THREE.OrthographicCamera(-1,1,1,-1,0.1,10);
+            this.renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('silkCanvas'), antialias:true });
+            this.camera.position.z = 1;
+
+            this.geometry = new THREE.PlaneGeometry(2,2);
+            this.uniforms = {
+                uTime: { value: 0 },
+                uSpeed: { value: this.options.speed },
+                uScale: { value: this.options.scale },
+                uNoiseIntensity: { value: this.options.noiseIntensity },
+                uColor: { value: new THREE.Color(...hexToNormalizedRGB(this.options.color)) },
+                uRotation: { value: this.options.rotation }
+            };
+            this.material = new THREE.ShaderMaterial({ uniforms:this.uniforms, vertexShader:vertexShader, fragmentShader:fragmentShader });
+            this.mesh = new THREE.Mesh(this.geometry, this.material);
+            this.scene.add(this.mesh);
+
+            window.addEventListener('resize', ()=>this.onResize());
+            this.onResize();
+            this.animate();
+        }
+
+        onResize() {
+            this.renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        animate() {
+            requestAnimationFrame(()=>this.animate());
+            this.uniforms.uTime.value += 0.01;
+            this.renderer.render(this.scene, this.camera);
+        }
+    }
+
+    $(document).ready(function() {
+        const ctaButton = document.querySelector('.cta-button');
+        if (ctaButton) {
+            ctaButton.addEventListener('click', () => {
+                ctaButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Abrindo contato...';
+                setTimeout(() => {
+                    setTimeout(() => {
+                        ctaButton.innerHTML = '<i class="fas fa-check"></i> Pronto!';
+                    }, 2000);
+
+                    ctaButton.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
+                    window.location.href = "mailto:filipedev@filipedev.pro";
+                }, 1500);
+            });
+        }
+    });
+
+    window.addEventListener('load', () => {
+        new SilkEffect({ speed:1, scale:1, color:"#261bf5", noiseIntensity:0.5, rotation:5 });
+
+        const container = document.querySelector('.pointer-highlight-container');
+        if (!container) return;
+        const text = container.querySelector('.highlight-text');
+        const rectangle = container.querySelector('.highlight-rectangle');
+        const pointer = container.querySelector('.pointer-arrow');
+
+        function updateDimensions() {
+            const { width, height } = text.getBoundingClientRect();
+            rectangle.style.width = width + 'px';
+            rectangle.style.height = height + 'px';
+            pointer.style.left = width + 4 + 'px';
+            pointer.style.top = height + 4 + 'px';
+        }
+
+        rectangle.style.width = '0';
+        rectangle.style.height = '0';
+        pointer.style.opacity = 0;
+
+        function activateHighlight() {
+            updateDimensions();
+            pointer.style.opacity = 1;
+        }
+
+        function onScroll() {
+            const section = document.querySelector('.second-section');
+            const rect = section.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.7 && rect.bottom > 0) {
+                activateHighlight();
+                window.removeEventListener('scroll', onScroll);
+            }
+        }
+
+        window.addEventListener('scroll', onScroll);
+        window.addEventListener('resize', updateDimensions);
+        onScroll();
+
+        const icons = {
+          terminal: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4h18v16H3V4zm2 2v12h14V6H5zm2 2l4 4-4 4" fill="currentColor"/></svg>`,
+          ease: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18" fill="currentColor"/></svg>`,
+          dollar: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1v22M17 5H9a4 4 0 1 0 0 8h6a4 4 0 1 1 0 8H7" fill="currentColor"/></svg>`,
+          cloud: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 19a4 4 0 0 1 0-8 a5 5 0 0 1 10 0h1a3 3 0 1 1 0 6H6z" fill="currentColor"/></svg>`,
+          route: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="currentColor"/></svg>`,
+          help: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 14h0M12 8a2 2 0 1 1 0 4" fill="currentColor"/></svg>`,
+          bolt: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor"/></svg>`,
+          heart: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21s-6-5.333-10-10c-4-4.667 2-11 10-3 8-8 14 .333 10 5-4 4.667-10 10-10 10z" fill="currentColor"/></svg>`
+        };
+
+        const features = [
+          { title: "Entrega rápida", description: "Priorizo sempre entregar no prazo definido por você cliente!", icon: icons.terminal },
+          { title: "Segurança", description: "Prezo sempre pela segurança e qualidade do seu código, garantindo que não haja vulnerabilidades ou problemas de segurança.", icon: icons.ease },
+          { title: "Preços como nenhum outro", description: "Meu preço é o melhor e mais acessivel do mercado, garantindo que você tenha o melhor custo beneficio.", icon: icons.dollar },
+          { title: "100% De garantia", description: "Garantia eterna e grátis sobre correção de erros. Qualquer modificação ou alteração não existente no site, será cobrada uma taxa justa conforme a alteração.", icon: icons.cloud },
+          { title: "24/6 de suporte", description: "Garanto o suporte e comunicação ao cliente, sempre visando a sua satisfação.", icon: icons.help },
+          { title: "E tudo mais.", description: "Cada projeto é único, minha prioridade é garantir que você tenha a melhor experiência.", icon: icons.heart },
+        ];
+
+        const grid = document.querySelector('.features-grid');
+        if (grid) {
+          features.forEach((feature, index) => {
+            const div = document.createElement('div');
+            div.className = 'feature';
+            const overlay = document.createElement('div');
+            overlay.className = index < 4 ? 'overlay-top' : 'overlay-bottom';
+            div.appendChild(overlay);
+            const iconDiv = document.createElement('div');
+            iconDiv.className = 'feature-icon';
+            iconDiv.innerHTML = feature.icon;
+            div.appendChild(iconDiv);
+            const title = document.createElement('div');
+            title.className = 'feature-title';
+            title.textContent = feature.title;
+            div.appendChild(title);
+            const desc = document.createElement('p');
+            desc.className = 'feature-description';
+            desc.textContent = feature.description;
+            div.appendChild(desc);
+            grid.appendChild(div);
+          });
+        }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const revealEls = document.querySelectorAll(
+        '.content, .projects-grid, .project-chip, .features-grid, .feature, .contact-card'
+      );
+      revealEls.forEach(el => el.classList.add('scroll-reveal-pre'));
+
+      if ('IntersectionObserver' in window) {
+        let observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('scroll-reveal');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        revealEls.forEach(el => observer.observe(el));
+      } else {
+        function revealOnScroll() {
+          revealEls.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.85) {
+              el.classList.add('scroll-reveal');
+            }
+          });
+        }
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+      }
+    });
+
+    $(document).ready(function() {
+        $('#projects-carousel').slick({
+            slidesToShow: 3,
+            dots: false,
+            arrows: true,
+            speed: 500,
+            slidesToScroll: 1,
+            infinite: true,
+            centerMode: true,
+            centerPadding: '0',
+            focusOnSelect: true,
+            cssEase: 'cubic-bezier(.1, .2, .1, .02)',
+            prevArrow: $('.nav__prev'),
+            nextArrow: $('.nav__next'),
+            responsive: [
+                { breakpoint: 900, settings: { slidesToShow: 2 } },
+                { breakpoint: 600, settings: { slidesToShow: 1 } }
+            ]
+        });
+
+        $('#projects-carousel').on('init', function(event, slick) {
+            $('.slick-slide').find('h3, p, .chip-tags, .chip-links').hide();
+            $('.slick-current').find('h3, p, .chip-tags, .chip-links').slideDown(500).delay(1000);
+        });
+
+        $('#projects-carousel').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+            if(currentSlide !== nextSlide) {
+                $('.slick-current').find('h3, p, .chip-tags, .chip-links').slideUp('fast');
+            }
+        });
+
+        $('#projects-carousel').on('afterChange', function(event, slick, currentSlide) {
+            $('.slick-current').find('h3, p, .chip-tags, .chip-links').slideDown(500).delay(800);
+        });
+    });
+</script>
+</body>
+</html>
