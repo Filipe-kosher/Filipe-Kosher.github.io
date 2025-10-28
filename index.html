@@ -3,21 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfólio Filipe</title>
+<title>Portfólio Filipe - Desenvolvedor Fullstack & UI/UX Designer</title>
 <meta name="description" content="Portfólio de Filipe: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte. Veja meus projetos e habilidades!">
 <meta name="keywords" content="portfólio, filipe, desenvolvedor, web, UI, UX, projetos, programação, frontend, backend, javascript, react, node, design, dev, brasil">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://filipedev.pro">
 <meta property="og:title" content="Portfólio Filipe">
-<meta property="og:description" content="Portfólio de Memphis: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte.">
+<meta property="og:description" content="Portfólio de Filipe: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://filipedev.pro/">
 <meta property="og:locale" content="pt_BR">
 <link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Libertinus+Serif+Display&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
 
 <style>
     body {
@@ -32,7 +30,7 @@
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #231F20;
+  background-color: rgb(0, 0, 0);
 }
 
     .menu-btn-container {
@@ -43,22 +41,67 @@
       z-index: 10;
     }
     .menu-btn {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       margin-inline-start: auto;
       margin-right: 1.5rem;
-      border: 1px solid #c0c0c02f;
-      inline-size: 132px;
-      padding-block: 0.5rem;
-      border-radius: 3rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      inline-size: 45px;
+      height: 45px;
+      padding: 0;
+      border-radius: 50%;
       text-decoration: none;
-      background-color: #161211;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       color: #fff;
       cursor: pointer;
-      font-stretch: 125%;
-      font-weight: 900;
-      font-size: 1.35rem;
-      transition: 0.3s all ease-in-out;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     }
+
+    .menu-btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+      border-color: rgba(255, 255, 255, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+    }
+
+    .menu-btn:active {
+      transform: translateY(0);
+    }
+
+    .hamburger-icon {
+      width: 16px;
+      height: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger-line {
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      border-radius: 1px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+
+    .menu-btn.active .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-btn.active .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-btn.active .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -6px);
+    }
+
 
     .nav {
       min-block-size: 100vh;
@@ -105,6 +148,8 @@
       font-stretch: 125%;
       font-weight: 900;
       transition: color 0.2s;
+      padding: 8px 16px;
+      border-radius: 8px;
     }
 
     .nav-item a:after {
@@ -123,6 +168,12 @@
       transform: scale(1);
     }
 
+    .nav-item a:focus {
+      background-color: rgba(38, 27, 245, 0.2);
+      outline: 2px solid #261bf5;
+      outline-offset: 4px;
+    }
+
     .nav canvas {
       position: absolute;
       top: 0;
@@ -135,13 +186,29 @@
     }
 
     @media (max-width: 700px) {
-      .menu-btn { font-size: 1.1rem; padding: 16px 48px; }
+      .menu-btn { 
+        inline-size: 40px; 
+        height: 40px; 
+        margin-right: 1rem;
+      }
+      .hamburger-icon {
+        width: 14px;
+        height: 14px;
+      }
       .nav-items { left: 10%; transform: translateY(-50%) translateX(-10%); }
       .nav-item a { font-size: 2rem; }
     }
 
     @media (max-width: 485px) {
-      .menu-btn { font-size: 1rem; padding: 14px 38px; }
+      .menu-btn { 
+        inline-size: 35px; 
+        height: 35px; 
+        margin-right: 0.8rem;
+      }
+      .hamburger-icon {
+        width: 12px;
+        height: 12px;
+      }
       .nav-items { left: 4%; transform: translateY(-50%) translateX(-4%); }
       .nav-item a { font-size: 1.4rem; }
     }
@@ -266,147 +333,7 @@
         transition: opacity 0.5s ease, transform 0.8s ease;
     }
 
-    .carousel-container {
-        position: relative;
-        display: block;
-        height: 420px;
-        max-width: 1000px;
-        margin: 40px auto 0 auto;
-    }
 
-    .projects-carousel {
-        margin: auto;
-        padding: 30px 0 0 0;
-    }
-
-    .carousel__slide {
-        width: 280px;
-        padding: 15px;
-        margin: 0 15px;
-        border-radius: 16px;
-        background: rgba(220, 220, 230, 0.30);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.10);
-        color: #222;
-        transform: scale(0.85);
-        transition: all 400ms ease-in-out;
-    }
-
-    .slick-current .carousel__slide {
-        transform: scale(1);
-        border-color: rgba(255, 255, 255, 0.18);
-        box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(38,27,245,0.04);
-    }
-	
-    .carousel__visual {
-        height: 200px;
-        overflow: hidden;
-        border-radius: 10px;
-        margin-bottom: 15px;
-    }
-
-    .carousel__visual img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .carousel__content {
-        position: relative;
-        padding: 0 5px;
-    }
-
-    .carousel__content h3 {
-        margin-top: 10px;
-        margin-bottom: 8px;
-        font-family: 'Libertinus Serif Display', serif;
-        font-size: 22px;
-        color: #fff;
-    }
-
-    .carousel__content p {
-        font-size: 14px;
-        color: #aaa;
-        margin: 0 0 10px;
-        line-height: 1.4;
-    }
-
-    .carousel__content .chip-tags {
-        margin-bottom: 12px;
-    }
-
-    .carousel__content .chip-tags span {
-        display: inline-block;
-        background: #eee;
-        color: #333;
-        padding: 4px 10px;
-        border-radius: 6px;
-        margin: 2px;
-        font-size: 12px;
-        white-space: nowrap;
-    }
-
-    .carousel__content .chip-links a {
-        margin-right: 10px;
-        font-size: 18px;
-        color: #a8a2ff;
-        transition: color 0.3s ease;
-    }
-
-    .carousel__content .chip-links a:hover {
-        color: #fff;
-    }
-
-    .nav__prev, .nav__next {
-        background: rgba(25, 25, 40, 0.5);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 22px;
-        color: #a8a2ff;
-        z-index: 2;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .nav__prev:hover, .nav__next:hover {
-        color: #fff;
-        border-color: #261bf5;
-        background: rgba(38, 27, 245, 0.2);
-    }
-
-    .nav__prev {
-        left: -20px;
-    }
-
-    .nav__next {
-        right: -20px;
-    }
-
-    @media (max-width: 600px) {
-        .carousel__slide {
-            width: 100%;
-            min-width: 0;
-            max-width: 100%;
-            padding: 10px;
-        }
-        .carousel__visual {
-            height: 120px;
-        }
-        .carousel__content h3 {
-            font-size: 1.1rem;
-        }
-    }
 
     .third-section {
         position: relative;
@@ -445,6 +372,13 @@
         opacity: 0;
         transform: translateY(20px);
         animation: fadeInUp 0.6s forwards;
+        border-radius: 8px;
+    }
+
+    .feature:focus {
+        outline: 2px solid #261bf5;
+        outline-offset: 4px;
+        background-color: rgba(38, 27, 245, 0.1);
     }
     .feature:nth-child(1) { animation-delay: 0s; }
     .feature:nth-child(2) { animation-delay: 0.1s; }
@@ -710,21 +644,28 @@
   margin-bottom: 2rem;
 }
 
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #fff;
-  background: linear-gradient(135deg, #261bf5, #4338ca);
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(38,27,245,0.4);
-}
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(135deg, #261bf5, #4338ca);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 16px rgba(38,27,245,0.4);
+      text-decoration: none;
+    }
+
+    .cta-button:focus {
+      outline: 3px solid #fff;
+      outline-offset: 3px;
+      box-shadow: 0 0 0 3px rgba(38, 27, 245, 0.5);
+    }
 
 .cta-button:hover {
   transform: translateY(-3px);
@@ -739,20 +680,26 @@
   margin-top: 2rem;
 }
 
-.social-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  justify-content: center;
-  color: #e0e0ff;
-  background: rgba(30,30,40,0.6);
-  border: 1px solid rgba(255,255,255,0.1);
-  font-size: 1.4rem;
-  transition: all 0.3s ease;
-}
+    .social-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      justify-content: center;
+      color: #e0e0ff;
+      background: rgba(30,30,40,0.6);
+      border: 1px solid rgba(255,255,255,0.1);
+      font-size: 1.4rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-btn:focus {
+      outline: 2px solid #261bf5;
+      outline-offset: 2px;
+      background: rgba(38, 27, 245, 0.2);
+    }
 
 .social-btn:hover {
   transform: translateY(-3px) scale(1.1);
@@ -761,6 +708,172 @@
   color: #fff;
 }
 
+/* Image Reveal Glass Styles */
+.projects-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 100%;
+}
+
+    .project-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      padding: 1rem 0.5rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: #aaa;
+      transition: color 0.3s ease;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
+    }
+
+    .project-item:focus {
+      outline: 2px solid #261bf5;
+      outline-offset: 4px;
+      background-color: rgba(38, 27, 245, 0.1);
+    }
+
+.project-item h3 {
+  margin: 0;
+  transition: color 0.3s ease;
+  font-family: 'Libertinus Serif Display', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.project-item.active h3 {
+  color: #ddd;
+  mix-blend-mode: difference;
+}
+
+    .project-item button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      padding: 0.5rem;
+      border: 1px solid rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(8px);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .project-item button:focus {
+      outline: 2px solid #261bf5;
+      outline-offset: 2px;
+      background: rgba(38, 27, 245, 0.2);
+    }
+
+.project-item button svg {
+  width: 20px;
+  height: 20px;
+  stroke: white;
+  transition: stroke 0.3s ease;
+}
+
+.project-item.active button {
+  background: white;
+  border-color: white;
+}
+
+.project-item.active button svg {
+  stroke: black;
+}
+
+.project-underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: white;
+  width: 0;
+  transition: width 0.3s linear;
+}
+
+.project-item.active .project-underline {
+  width: 100%;
+}
+
+.floating-image {
+  position: fixed;
+  width: 350px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.project-mobile-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.more-projects-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.more-projects-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #261bf5, #4338ca);
+  border: 1px solid rgba(38, 27, 245, 0.3);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(38, 27, 245, 0.3);
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+
+.more-projects-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(38, 27, 245, 0.5);
+  background: linear-gradient(135deg, #4338ca, #261bf5);
+  border-color: rgba(38, 27, 245, 0.5);
+}
+
+.more-projects-btn:active {
+  transform: translateY(-1px);
+}
+
+.more-projects-btn i {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+
+.more-projects-btn:hover i:last-child {
+  transform: translateX(2px);
+}
+
+/* Melhorias de acessibilidade para mobile */
 @media (max-width: 600px) {
   .hero-title {
     font-size: 2.5rem;
@@ -791,29 +904,125 @@
   .cta-button {
     font-size: 1rem;
     padding: 0.8rem 1.2rem;
+    min-height: 44px; /* Tamanho mínimo para toque */
   }
   .social-btn {
-    width: 40px;
-    height: 40px;
+    width: 44px; /* Tamanho mínimo para toque */
+    height: 44px;
     font-size: 1.1rem;
   }
-  .carousel__slide {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-    padding: 10px;
+  .project-item {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 44px; /* Tamanho mínimo para toque */
+    padding: 12px;
   }
-  .carousel__visual {
-    height: 120px;
+  .project-item button {
+    display: none !important;
   }
-  .carousel__content h1 {
-    font-size: 1.1rem;
+  .floating-image {
+    display: none;
+  }
+  .more-projects-btn {
+    font-size: 14px;
+    padding: 12px 24px;
+    gap: 8px;
+    min-height: 44px; /* Tamanho mínimo para toque */
+  }
+  .more-projects-btn-container {
+    margin-top: 30px;
+    padding: 0 10px;
+  }
+  
+  /* Melhor contraste para mobile */
+  .nav-item a {
+    font-size: 1.8rem;
+    padding: 12px 16px;
+  }
+  
+  /* Melhor espaçamento para toque */
+  .feature {
+    padding: 20px 16px;
+    min-height: 120px;
+  }
+  
+  /* Melhor foco para mobile */
+  :focus {
+    outline-width: 4px;
   }
 }
 
-:focus {
-  outline: 2px solid #261bf5;
+/* Skip Link para acessibilidade */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #261bf5;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+  font-weight: bold;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 6px;
+  outline: 2px solid #fff;
   outline-offset: 2px;
+}
+
+/* Melhorias de foco para acessibilidade */
+:focus {
+  outline: 3px solid #261bf5;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Foco visível para elementos interativos */
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid #261bf5;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(38, 27, 245, 0.3);
+}
+
+/* Melhor contraste para texto */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Melhor contraste para links */
+a {
+  color: #4A9EFF;
+  text-decoration: underline;
+}
+
+a:hover, a:focus {
+  color: #66B3FF;
+  text-decoration: none;
+}
+
+/* Melhor contraste para botões */
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 @media (max-width: 400px) {
@@ -824,30 +1033,528 @@
     font-size: 1.2rem;
   }
 }
-.scroll-reveal-pre {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: opacity 0.8s cubic-bezier(.35,.97,.45,1), transform 0.8s cubic-bezier(.35,.97,.45,1);
-  will-change: opacity, transform;
+/* Stats Section */
+.stats-section {
+    padding: 3rem 1.5rem;
 }
-.scroll-reveal {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-  pointer-events: auto;
+@media (min-width: 768px) {
+    .stats-section {
+        padding: 5rem 1.5rem;
+    }
+}
+.stats-container {
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+.stats-header {
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.stats-header.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.stats-header h2 {
+    font-family: 'Libertinus Serif Display', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #e0e0ff;
+}
+@media (min-width: 1024px) {
+    .stats-header h2 {
+        font-size: 3rem;
+    }
+}
+.stats-header p {
+    color: #aaa;
+    font-size: 1rem;
+}
+.stats-grid {
+    display: grid;
+    gap: 3rem;
+    border-top: 1px solid #333;
+    padding-top: 3rem;
+}
+@media (min-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        border-top: none;
+        border-left: 1px solid #333;
+    }
+    .stat-item {
+        border-left: 1px solid #333;
+        padding-left: 2rem;
+    }
+    .stat-item:first-child {
+        border-left: none;
+        padding-left: 0;
+    }
+}
+.stat-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.stat-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    transform: scale(1);
+    transition: transform 0.2s ease-out;
+}
+.stat-number.zoom {
+    transform: scale(1.2);
+}
+body.lock-screen { 
+  overflow: hidden; 
+  touch-action: none;
+}
+
+/* Timeline Section - Modern & Minimalist */
+.timeline-section {
+  position: relative;
+  width: 100%;
+  background: #000;
+  padding: 80px 20px;
+  z-index: 1;
+}
+
+.timeline-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.timeline-title {
+  font-family: 'Libertinus Serif Display', serif;
+  font-size: 44px;
+  color: #e0e0ff;
+  text-align: center;
+  margin-bottom: 80px;
+  margin-top: 0;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-shadow: 0 2px 16px rgba(38,27,245,0.12);
+}
+
+.timeline {
+  position: relative;
+  padding: 40px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #333;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-right: 55%;
+  text-align: right;
+  padding-right: 60px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-left: 55%;
+  text-align: left;
+  padding-left: 60px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 50%;
+  top: 24px;
+  width: 8px;
+  height: 8px;
+  background: #666;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.timeline-marker.current {
+  background: #fff;
+  width: 12px;
+  height: 12px;
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+.timeline-item:hover .timeline-marker {
+  transform: translateX(-50%) scale(1.3);
+  background: #fff;
+}
+
+.timeline-content {
+  background: transparent;
+  border: 1px solid #222;
+  border-radius: 0;
+  padding: 32px 0;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.timeline-content:hover {
+  border-color: #444;
+}
+
+.timeline-date {
+  font-size: 12px;
+  color: #666;
+  font-weight: 400;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.timeline-content h3 {
+  font-size: 18px;
+  color: #fff;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.timeline-content p {
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* Responsive Timeline */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 24px;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-left: 60px;
+    margin-right: 0;
+    text-align: left;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .timeline-marker {
+    left: 24px;
+  }
+  
+  .timeline-title {
+    font-size: 28px;
+    margin-bottom: 60px;
+  }
+  
+  .timeline-content {
+    padding: 24px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .timeline-section {
+    padding: 60px 20px;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    margin-left: 50px;
+  }
+  
+  .timeline-marker {
+    left: 20px;
+  }
+  
+  .timeline::before {
+    left: 20px;
+  }
+  
+  .timeline-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+}
+
+/* Companies Section - Simple Layout */
+.companies-section {
+  position: relative;
+  width: 100%;
+  background: #000;
+  padding: 60px 20px;
+  z-index: 1;
+}
+
+.companies-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  flex-wrap: wrap;
+}
+
+.company-logo {
+  max-width: 120px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0.9);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .companies-logos {
+    gap: 60px;
+  }
+  
+  .company-logo {
+    max-width: 100px;
+    max-height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .companies-section {
+    padding: 40px 20px;
+  }
+  
+  .companies-logos {
+    gap: 40px;
+  }
+  
+  .company-logo {
+    max-width: 80px;
+    max-height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .companies-section {
+    padding: 30px 15px;
+  }
+  
+  .companies-logos {
+    gap: 30px;
+    flex-direction: column;
+  }
+  
+  .company-logo {
+    max-width: 70px;
+    max-height: 35px;
+  }
+}
+
+/* Footer Styles */
+.footer {
+  background: #000;
+  border-top: 1px solid #333;
+  padding: 60px 20px 30px;
+  margin-top: 80px;
+}
+
+.footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-brand {
+  margin-bottom: 40px;
+}
+
+.footer-brand h3 {
+  font-family: 'Story Script', cursive;
+  font-size: 3rem;
+  color: #e0e0ff;
+  margin: 0 0 12px 0;
+  text-shadow: 0 2px 16px rgba(38,27,245,0.12);
+}
+
+.footer-brand p {
+  color: #aaa;
+  font-size: 1.1rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  color: #aaa;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-nav a:hover {
+  color: #e0e0ff;
+  transform: translateY(-2px);
+}
+
+.footer-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #261bf5;
+  transition: width 0.3s ease;
+}
+
+.footer-nav a:hover::after {
+  width: 100%;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.footer-social a {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(30,30,40,0.6);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  text-decoration: none;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background: rgba(38,27,245,0.2);
+  border-color: #261bf5;
+  color: #fff;
+  transform: translateY(-3px) scale(1.1);
+}
+
+.footer-bottom {
+  padding-top: 30px;
+  border-top: 1px solid #333;
+}
+
+.footer-bottom p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.footer-bottom i {
+  color: #e74c3c;
+  margin: 0 4px;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 20px 20px;
+    margin-top: 60px;
+  }
+  
+  .footer-brand h3 {
+    font-size: 2.5rem;
+  }
+  
+  .footer-nav {
+    gap: 30px;
+  }
+  
+  .footer-social a {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 15px 20px;
+  }
+  
+  .footer-brand h3 {
+    font-size: 2rem;
+  }
+  
+  .footer-nav {
+    gap: 20px;
+    flex-direction: column;
+  }
+  
+  .footer-social {
+    gap: 15px;
+  }
+  
+  .footer-social a {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
 }
 </style>
 </head>
 <body>
 
     <div class="menu-btn-container">
-        <button type="button" class="menu-btn">menu</button>
+        <button type="button" class="menu-btn" aria-label="Abrir menu" aria-controls="primary-navigation" aria-expanded="false">
+            <div class="hamburger-icon">
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+                <div class="hamburger-line"></div>
+            </div>
+        </button>
     </div>
 
-    <nav class="nav hidden">
+    <nav class="nav hidden" id="primary-navigation" role="navigation" aria-hidden="true">
         <canvas></canvas>
         <ol class="nav-items">
             <li class="nav-item"><a href="#home">Home</a></li>
             <li class="nav-item"><a href="#work">Meu trabalho</a></li>
+            <li class="nav-item"><a href="#timeline">Timeline</a></li>
             <li class="nav-item"><a href="#skills">Skills</a></li>
             <li class="nav-item"><a href="#contact" data-focused="last-focused">Contato</a></li>
         </ol>
@@ -871,118 +1578,17 @@
                 </span>
             </span>.</h2>
 			
-            <div class="carousel-container">
-                <div class="projects-carousel" id="projects-carousel">
-                    <div>
-                        <div class="carousel__slide">
-                            <div class="carousel__visual">
-                                <img src="https://raw.githubusercontent.com/Filipe-kosher/site-de-bio/main/screenshot.png" alt="Site bio">
+            <div class="projects-wrapper">
+                <div class="card" id="image-reveal"></div>
                             </div>
-                            <div class="carousel__content">
-                                <h3>Site bio</h3>
-                                <p>Site one-page para bio de redes sociais</p>
-                                <div class="chip-tags">
-                                    <span>HTML</span><span>CSS</span><span>JS</span>
-                                </div>
-                                <div class="chip-links" role="navigation" aria-label="Links do projeto">
-                                    <a href="https://github.com/Filipe-kosher/site-de-bio" target="_blank"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="carousel__slide">
-                            <div class="carousel__visual">
-                                <img src="https://raw.githubusercontent.com/Filipe-kosher/MemphisX-V1/main/screenshot.png" alt="Projeto MemphisX V1">
-                            </div>
-                            <div class="carousel__content">
-                                <h3>MemphisX V1</h3>
-                                <p>Otimizador que detecta todas as peças do computador de forma automática e aplica ajustes para obter o maior desempenho.</p>
-                                <div class="chip-tags">
-                                    <span>HTML</span><span>CSS</span><span>JS</span><span>Batch</span><span>Powershell</span><span>VBScript</span>
-                                </div>
-                                <div class="chip-links" role="navigation" aria-label="Links do projeto">
-                                    <a href="https://github.com/Filipe-kosher/MemphisX-V1" target="_blank"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="carousel__slide">
-                            <div class="carousel__visual">
-                                <img src="https://raw.githubusercontent.com/Filipe-kosher/vicente-portfolio/main/screenshot.png" alt="Projeto Vincente Portfólio">
-                            </div>
-                            <div class="carousel__content">
-                                <h3>Portfólio Kawe Vincente</h3>
-                                <p>Um portfólio visualmente impressionante, aplicando boas práticas e visando o desempenho.</p>
-                                <div class="chip-tags">
-                                    <span>HTML</span><span>CSS</span><span>JS</span>
-                                </div>
-                                <div class="chip-links" role="navigation" aria-label="Links do projeto">
-                                    <a href="https://github.com/Filipe-kosher/vicente-portfolio" target="_blank"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="carousel__slide">
-                            <div class="carousel__visual">
-                                <img src="https://raw.githubusercontent.com/Filipe-kosher/Hybrix_IA/main/screenshot.png" alt="Projeto Hybrix IA">
-                            </div>
-                            <div class="carousel__content">
-                                <h3>Hybrix IA</h3>
-                                <p>Uma IA avançada, com funcionalidades inovadoras e com geração automática de insights.</p>
-                                <div class="chip-tags">
-                                    <span>Python 3</span><span>API Rest</span><span>Pandas</span><span>Matplotlib</span><span>PyQt6</span><span>Faiss</span><span>Requests</span>
-                                </div>
-                                <div class="chip-links" role="navigation" aria-label="Links do projeto">
-                                    <a href="https://github.com/Filipe-kosher/Hybrix_IA" target="_blank"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="carousel__slide">
-                            <div class="carousel__visual">
-                                <img src="https://raw.githubusercontent.com/Filipe-kosher/Hybrix-Site/main/screenshot.png" alt="Projeto Hybrix Site">
-                            </div>
-                            <div class="carousel__content">
-                                <h3>Hybrix Website</h3>
-                                <p>Um website fictício da minha inteligência artificial, Hybrix.</p>
-                                <div class="chip-tags">
-                                    <span>HTML</span><span>CSS</span><span>JS</span><span>ThreeJS</span><span>Font Awesome</span>
-                                </div>
-                                <div class="chip-links" role="navigation" aria-label="Links do projeto">
-                                    <a href="https://github.com/Filipe-kosher/Hybrix-Site" target="_blank"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div>
-                        <div class="carousel__slide">
-                            <div class="carousel__visual">
-                                <img src="https://raw.githubusercontent.com/Filipe-kosher/HyzeN-Solutions/main/screenshot.png" alt="Projeto HyzeN Solutions">
-                            </div>
-                            <div class="carousel__content">
-                                <h3>HyzeN Solutions Site</h3>
-                                <p>Um site direto, rápido e responsivo. Focado em alta conversão.</p>
-                                <div class="chip-tags">
-                                    <span>HTML</span><span>CSS</span><span>JS</span><span>Font Awesome</span>
-                                </div>
-                                <div class="chip-links" role="navigation" aria-label="Links do projeto">
-                                    <a href="https://github.com/Filipe-kosher/HyzeN-Solutions" target="_blank"><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class='nav__prev'><i class="fas fa-chevron-left"></i></div>
-                <div class='nav__next'><i class="fas fa-chevron-right"></i></div>
+            <img id="floatingImage" class="floating-image" src="" alt="preview"/>
+            
+            <div class="more-projects-btn-container">
+                <button class="more-projects-btn" onclick="window.open('https://github.com/Filipe-Kosher', '_blank')">
+                    <i class="fas fa-code"></i>
+                    <span>Ver mais projetos</span>
+                    <i class="fas fa-external-link-alt"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -994,9 +1600,130 @@
         </div>
     </section>
 
+	<section class="stats-section">
+		<div class="stats-container">
+			<div class="stats-header">
+				<h2>Nem tudo é sobre código, mas sobre impacto.</h2>
+			</div>
+			<div class="stats-grid">
+				<div class="stat-item">
+					<div class="stat-number" data-target="300000">0</div>
+					<p>Pessoas alcançadas</p>
+				</div>
+				<div class="stat-item">
+					<div class="stat-number" data-target="3">0</div>
+					<p>Equipes lideradas</p>
+				</div>
+				<div class="stat-item">
+					<div class="stat-number" data-target="20">0</div>
+					<p>Projetos concluidos</p>
+				</div>
+			</div>
+		</div>
+    </section>
+
+    <section class="timeline-section" id="timeline">
+        <div class="timeline-container">
+            <h2 class="timeline-title">Minha Jornada</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-year="2022">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Novembro 2022</div>
+                        <h3>Estudos Autodidatas</h3>
+                        <p>Início da jornada na programação</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-year="2023-2025">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - 2025</div>
+                        <h3>aMathyzin Group</h3>
+                        <p>Dev Backend e Gestor de projetos</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-year="2023-2024">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023 - 2024</div>
+                        <h3>Lion fé</h3>
+                        <p>Dev Backend</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-year="2024">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <h3>Equipe iGust</h3>
+                        <p>Dev Fullstack, Gestor</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-year="2024">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024</div>
+                        <h3>Max Odontologia</h3>
+                        <p>Dev Fullstack</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-year="2025">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025</div>
+                        <h3>Yatzar Studio</h3>
+                        <p>Dev Fullstack, Gestor</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-year="2025-atual">
+                    <div class="timeline-marker current"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 - Atual</div>
+                        <h3>Calisto Networking</h3>
+                        <p>Dev Fullstack</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-year="2025-atual">
+                    <div class="timeline-marker current"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025 - Atual</div>
+                        <h3>Mundo do Samzinho</h3>
+                        <p>Dev Fullstack</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-year="2025">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025</div>
+                        <h3>Arcade Lunar</h3>
+                        <p>Dev Backend</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÍCONES DAS PARADAS QUE JÁ TRABALHEI -->
+    <section class="companies-section">
+      <div class="companies-logos">
+        <img src="icon/1.png" alt="Empresa 1" class="company-logo"/>
+        <img src="icon/2.png" alt="Empresa 3" class="company-logo"/>
+        <img src="icon/3.png" alt="Empresa 3" class="company-logo"/>
+        <img src="icon/4.png" alt="Empresa 4" class="company-logo"/>
+        <img src="icon/6.png" alt="Empresa 6" class="company-logo"/>
+      </div>
+    </section>
+
 <section class="skills-section" id="skills">
     <div class="content">
-      <h2 class="skills-title">Habilidades</h2>
+      <h2 class="skills-title">Stacks</h2>
   
       <div class="scroll" style="--t:35s">
         <div>
@@ -1098,7 +1825,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <script>
     const nav = document.querySelector(".nav");
@@ -1107,13 +1833,10 @@
 
     const toggleNav = () => {
       nav.classList.toggle("hidden");
+      const expanded = btnToggleNav.classList.toggle("active");
       document.body.classList.toggle("lock-screen");
-
-      if (nav.classList.contains("hidden")) {
-        btnToggleNav.textContent = "menu";
-      } else {
-        setTimeout(() => { btnToggleNav.textContent = "close"; }, 475);
-      }
+      btnToggleNav.setAttribute('aria-expanded', String(expanded));
+      nav.setAttribute('aria-hidden', String(!expanded));
     };
 
     btnToggleNav.addEventListener("click", toggleNav);
@@ -1136,6 +1859,7 @@
     const canvas = nav.querySelector('canvas');
     if (canvas) {
       const ctx = canvas.getContext('2d');
+      let animId;
 
       function resizeCanvas() {
         canvas.width = nav.clientWidth;
@@ -1156,11 +1880,21 @@
       }
 
       function animateNoise() {
-        generateNoise();
-        requestAnimationFrame(animateNoise);
+        if (!nav.classList.contains('hidden')) {
+          generateNoise();
+        }
+        animId = requestAnimationFrame(animateNoise);
       }
 
       animateNoise();
+
+      // Re-render somente quando abrir/fechar
+      const obs = new MutationObserver(() => {
+        if (!nav.classList.contains('hidden')) {
+          generateNoise();
+        }
+      });
+      obs.observe(nav, { attributes: true, attributeFilter: ['class'] });
     }
 
     function hexToNormalizedRGB(hex) {
@@ -1263,7 +1997,7 @@
         }
     }
 
-    $(document).ready(function() {
+    document.addEventListener('DOMContentLoaded', function() {
         const ctaButton = document.querySelector('.cta-button');
         if (ctaButton) {
             ctaButton.addEventListener('click', () => {
@@ -1274,14 +2008,14 @@
                     }, 2000);
 
                     ctaButton.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
-                    window.location.href = "mailto:filipedev@filipedev.pro";
+                    window.location.href = "mailto:filipe@filipedev.pro";
                 }, 1500);
             });
         }
     });
 
     window.addEventListener('load', () => {
-        new SilkEffect({ speed:1, scale:1, color:"#261bf5", noiseIntensity:0.5, rotation:5 });
+        new SilkEffect({ speed:1, scale:1, color:"#095B8B", noiseIntensity:1.5, rotation:5 });
 
         const container = document.querySelector('.pointer-highlight-container');
         if (!container) return;
@@ -1319,6 +2053,143 @@
         window.addEventListener('resize', updateDimensions);
         onScroll();
 
+        // Image Reveal Glass Effect
+        const projects = [
+            { 
+                id: 1, 
+                src: 'https://raw.githubusercontent.com/Filipe-kosher/site-de-bio/main/screenshot.png', 
+                title: 'Site Bio',
+                description: 'Site one-page para bio de redes sociais',
+                tags: ['HTML', 'CSS', 'JS'],
+                github: 'https://github.com/Filipe-kosher/site-de-bio'
+            },
+            { 
+                id: 2, 
+                src: 'https://raw.githubusercontent.com/Filipe-kosher/MemphisX-V1/main/screenshot.png', 
+                title: 'MemphisX V1',
+                description: 'Otimizador que detecta todas as peças do computador de forma automática e aplica ajustes para obter o maior desempenho.',
+                tags: ['HTML', 'CSS', 'JS', 'Batch', 'Powershell', 'VBScript'],
+                github: 'https://github.com/Filipe-kosher/MemphisX-V1'
+            },
+            { 
+                id: 3, 
+                src: 'https://raw.githubusercontent.com/Filipe-kosher/vicente-portfolio/main/screenshot.png', 
+                title: 'Portfólio Kawe Vincente',
+                description: 'Um portfólio visualmente impressionante, aplicando boas práticas e visando o desempenho.',
+                tags: ['HTML', 'CSS', 'JS'],
+                github: 'https://github.com/Filipe-kosher/vicente-portfolio'
+            },
+            { 
+                id: 4, 
+                src: 'https://raw.githubusercontent.com/Filipe-kosher/Hybrix_IA/main/screenshot.png', 
+                title: 'Hybrix IA',
+                description: 'Uma IA avançada, com funcionalidades inovadoras e com geração automática de insights.',
+                tags: ['Python 3', 'API Rest', 'Pandas', 'Matplotlib', 'PyQt6', 'Faiss', 'Requests'],
+                github: 'https://github.com/Filipe-kosher/Hybrix_IA'
+            },
+            { 
+                id: 5, 
+                src: 'https://raw.githubusercontent.com/Filipe-kosher/Hybrix-Site/main/screenshot.png', 
+                title: 'Hybrix Website',
+                description: 'Um website fictício da minha inteligência artificial, Hybrix.',
+                tags: ['HTML', 'CSS', 'JS', 'ThreeJS', 'Font Awesome'],
+                github: 'https://github.com/Filipe-kosher/Hybrix-Site'
+            },
+            { 
+                id: 6, 
+                src: 'https://raw.githubusercontent.com/Filipe-kosher/HyzeN-Solutions/main/screenshot.png', 
+                title: 'HyzeN Solutions Site',
+                description: 'Um site direto, rápido e responsivo. Focado em alta conversão.',
+                tags: ['HTML', 'CSS', 'JS', 'Font Awesome'],
+                github: 'https://github.com/Filipe-kosher/HyzeN-Solutions'
+            }
+        ];
+
+        const imageRevealContainer = document.getElementById("image-reveal");
+        const floatingImage = document.getElementById("floatingImage");
+        const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+
+        if (imageRevealContainer) {
+            projects.forEach(project => {
+                const item = document.createElement("div");
+                item.className = "project-item";
+
+                if (!isDesktop) {
+                    const mobileImg = document.createElement("img");
+                    mobileImg.src = project.src;
+                    mobileImg.alt = project.title;
+                    mobileImg.className = "project-mobile-img";
+                    item.appendChild(mobileImg);
+                }
+
+                const title = document.createElement("h3");
+                title.textContent = project.title;
+                item.appendChild(title);
+
+                if (isDesktop) {
+                    const btn = document.createElement("button");
+                    btn.innerHTML = `
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" 
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l10-10M17 7h-6m6 0v6"/>
+                        </svg>`;
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        window.open(project.github, '_blank');
+                    });
+                    item.appendChild(btn);
+                }
+
+                const underline = document.createElement("div");
+                underline.className = "project-underline";
+                item.appendChild(underline);
+
+                item.addEventListener("mouseenter", () => {
+                    document.querySelectorAll(".project-item").forEach(i => i.classList.remove("active"));
+                    item.classList.add("active");
+
+                    if (isDesktop && floatingImage) {
+                        floatingImage.src = project.src;
+                        floatingImage.style.opacity = "1";
+                        floatingImage.style.transform = "translate(-50%, -50%) scale(1)";
+                    }
+                });
+
+                item.addEventListener("mouseleave", () => {
+                    item.classList.remove("active");
+                    if (isDesktop && floatingImage) {
+                        floatingImage.style.opacity = "0";
+                        floatingImage.style.transform = "translate(-50%, -50%) scale(1)";
+                    }
+                });
+
+                imageRevealContainer.appendChild(item);
+            });
+
+            // Cursor follow effect for desktop
+            if (isDesktop && floatingImage) {
+                let cursorX = 0, cursorY = 0;
+                let targetX = 0, targetY = 0;
+                const offsetX = 50;
+                const offsetY = -30;
+
+                function animate() {
+                    cursorX += (targetX - cursorX) * 0.2;
+                    cursorY += (targetY - cursorY) * 0.2;
+                    floatingImage.style.left = (cursorX + offsetX) + "px";
+                    floatingImage.style.top = (cursorY + offsetY) + "px";
+                    requestAnimationFrame(animate);
+                }
+
+                document.addEventListener("mousemove", e => {
+                    targetX = e.clientX;
+                    targetY = e.clientY;
+                });
+
+                animate();
+            }
+        }
+
         const icons = {
           terminal: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4h18v16H3V4zm2 2v12h14V6H5zm2 2l4 4-4 4" fill="currentColor"/></svg>`,
           ease: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18" fill="currentColor"/></svg>`,
@@ -1333,9 +2204,9 @@
         const features = [
           { title: "Entrega rápida", description: "Priorizo sempre entregar no prazo definido por você cliente!", icon: icons.terminal },
           { title: "Segurança", description: "Prezo sempre pela segurança e qualidade do seu código, garantindo que não haja vulnerabilidades ou problemas de segurança.", icon: icons.ease },
-          { title: "Preços como nenhum outro", description: "Meu preço é o melhor e mais acessivel do mercado, garantindo que você tenha o melhor custo beneficio.", icon: icons.dollar },
-          { title: "100% De garantia", description: "Garantia eterna e grátis sobre correção de erros. Qualquer modificação ou alteração não existente no site, será cobrada uma taxa justa conforme a alteração.", icon: icons.cloud },
-          { title: "24/6 de suporte", description: "Garanto o suporte e comunicação ao cliente, sempre visando a sua satisfação.", icon: icons.help },
+          { title: "Preços imbatíveis", description: "Meu preço é o melhor e mais acessível do mercado, garantindo que você tenha o melhor custo benefício.", icon: icons.dollar },
+          { title: "100% de garantia", description: "Garantia eterna e grátis sobre correção de erros. Qualquer modificação ou alteração não existente no site, será cobrada uma taxa justa conforme a alteração.", icon: icons.cloud },
+          { title: "Suporte 24/6", description: "Garanto o suporte e comunicação ao cliente, sempre visando a sua satisfação.", icon: icons.help },
           { title: "E tudo mais.", description: "Cada projeto é único, minha prioridade é garantir que você tenha a melhor experiência.", icon: icons.heart },
         ];
 
@@ -1362,73 +2233,98 @@
             grid.appendChild(div);
           });
         }
-    });
 
-    document.addEventListener('DOMContentLoaded', function() {
-      const revealEls = document.querySelectorAll(
-        '.content, .projects-grid, .project-chip, .features-grid, .feature, .contact-card'
-      );
-      revealEls.forEach(el => el.classList.add('scroll-reveal-pre'));
-
-      if ('IntersectionObserver' in window) {
-        let observer = new IntersectionObserver((entries, obs) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('scroll-reveal');
-              obs.unobserve(entry.target);
+        // Stats section animation
+        function animateCounter(el){
+            const target = parseInt(el.getAttribute('data-target')) || 0;
+            const duration = 1500;
+            const startTime = performance.now();
+            let lastValue = 0;
+            function update(currentTime){
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const value = Math.floor(progress * target);
+                if (value !== lastValue) {
+                    el.classList.add('zoom');
+                    setTimeout(()=>el.classList.remove('zoom'), 150);
+                    lastValue = value;
+                }
+                el.textContent = value.toLocaleString('pt-BR');
+                if (progress < 1) requestAnimationFrame(update);
             }
-          });
-        }, { threshold: 0.15 });
-        revealEls.forEach(el => observer.observe(el));
-      } else {
-        function revealOnScroll() {
-          revealEls.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.85) {
-              el.classList.add('scroll-reveal');
-            }
-          });
+            requestAnimationFrame(update);
         }
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll();
-      }
+
+        const statsObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const item = entry.target;
+                    item.classList.add('visible');
+                    const number = item.querySelector('.stat-number');
+                    if (number && !number.classList.contains('animated')) {
+                        animateCounter(number);
+                        number.classList.add('animated');
+                    }
+                    statsObserver.unobserve(item);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        document.querySelectorAll('.stat-item, .stats-header').forEach(el => statsObserver.observe(el));
+
+        // Timeline animation
+        const timelineObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            timelineObserver.observe(item);
+        });
+
     });
 
-    $(document).ready(function() {
-        $('#projects-carousel').slick({
-            slidesToShow: 3,
-            dots: false,
-            arrows: true,
-            speed: 500,
-            slidesToScroll: 1,
-            infinite: true,
-            centerMode: true,
-            centerPadding: '0',
-            focusOnSelect: true,
-            cssEase: 'cubic-bezier(.1, .2, .1, .02)',
-            prevArrow: $('.nav__prev'),
-            nextArrow: $('.nav__next'),
-            responsive: [
-                { breakpoint: 900, settings: { slidesToShow: 2 } },
-                { breakpoint: 600, settings: { slidesToShow: 1 } }
-            ]
-        });
 
-        $('#projects-carousel').on('init', function(event, slick) {
-            $('.slick-slide').find('h3, p, .chip-tags, .chip-links').hide();
-            $('.slick-current').find('h3, p, .chip-tags, .chip-links').slideDown(500).delay(1000);
-        });
 
-        $('#projects-carousel').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-            if(currentSlide !== nextSlide) {
-                $('.slick-current').find('h3, p, .chip-tags, .chip-links').slideUp('fast');
-            }
-        });
-
-        $('#projects-carousel').on('afterChange', function(event, slick, currentSlide) {
-            $('.slick-current').find('h3, p, .chip-tags, .chip-links').slideDown(500).delay(800);
-        });
-    });
 </script>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h3>Filipe.</h3>
+            <p>Desenvolvedor Fullstack & UI/UX Designer</p>
+        </div>
+        
+        <div class="footer-nav">
+            <a href="#home">Home</a>
+            <a href="#work">Projetos</a>
+            <a href="#timeline">Timeline</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contato</a>
+        </div>
+        
+        <div class="footer-social">
+            <a href="https://github.com/Filipe-Kosher" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://discord.com/users/1193428032250191912" target="_blank" rel="noopener">
+                <i class="fab fa-discord"></i>
+            </a>
+            <a href="https://api.whatsapp.com/send?phone=5562985070491" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Filipe. Feito com <i class="fas fa-heart"></i> no Brasil</p>
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>
+
