@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfólio Filipe - Desenvolvedor Fullstack & UI/UX Designer</title>
-<meta name="description" content="Portfólio de Filipe: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte. Veja meus projetos e habilidades!">
+<title data-i18n="meta.title">Portfólio Filipe - Desenvolvedor Fullstack & UI/UX Designer</title>
+<meta name="description" content="Portfólio de Filipe: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte. Veja meus projetos e habilidades!" data-i18n-meta="meta.description">
 <meta name="keywords" content="portfólio, filipe, desenvolvedor, web, UI, UX, projetos, programação, frontend, backend, javascript, react, node, design, dev, brasil">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://filipedev.pro">
-<meta property="og:title" content="Portfólio Filipe">
-<meta property="og:description" content="Portfólio de Filipe: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte.">
+<meta property="og:title" content="Portfólio Filipe" data-i18n-meta="meta.og_title">
+<meta property="og:description" content="Portfólio de Filipe: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte." data-i18n-meta="meta.og_description">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://filipedev.pro/">
 <meta property="og:locale" content="pt_BR">
@@ -31,6 +31,11 @@
   margin: 0;
   padding: 0;
   background-color: rgb(0, 0, 0);
+}
+
+/* Scroll normal - sem smooth para evitar travamentos */
+html {
+  scroll-behavior: auto;
 }
 
     .menu-btn-container {
@@ -185,6 +190,86 @@
       opacity: 0.08;
     }
 
+    .language-selector {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      display: flex;
+      gap: 12px;
+      z-index: 15;
+      pointer-events: auto;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .language-selector.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .language-selector.visible .lang-btn {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    .lang-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(20, 20, 30, 0.9);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+      opacity: 1 !important;
+      visibility: visible !important;
+      z-index: 20;
+      position: relative;
+    }
+
+    .lang-btn:hover {
+      background: rgba(0, 0, 0, 0.8);
+      border-color: rgba(255, 255, 255, 0.5);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .lang-btn:active {
+      transform: translateY(0) scale(1);
+    }
+
+    .lang-btn[aria-pressed="true"] {
+      background: rgba(38, 27, 245, 0.3);
+      border-color: #261bf5;
+      box-shadow: 0 0 0 3px rgba(38, 27, 245, 0.2);
+    }
+
+    .lang-btn:focus {
+      outline: 2px solid #261bf5;
+      outline-offset: 3px;
+    }
+
+    .flag-icon {
+      font-size: 32px;
+      line-height: 1;
+      display: inline-block;
+      filter: none;
+      opacity: 1 !important;
+      visibility: visible !important;
+      width: auto;
+      height: auto;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
     @media (max-width: 700px) {
       .menu-btn { 
         inline-size: 40px; 
@@ -197,6 +282,18 @@
       }
       .nav-items { left: 10%; transform: translateY(-50%) translateX(-10%); }
       .nav-item a { font-size: 2rem; }
+      .language-selector {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        gap: 10px;
+      }
+      .lang-btn {
+        width: 45px;
+        height: 45px;
+      }
+      .flag-icon {
+        font-size: 20px;
+      }
     }
 
     @media (max-width: 485px) {
@@ -211,6 +308,18 @@
       }
       .nav-items { left: 4%; transform: translateY(-50%) translateX(-4%); }
       .nav-item a { font-size: 1.4rem; }
+      .language-selector {
+        bottom: 1rem;
+        right: 1rem;
+        gap: 8px;
+      }
+      .lang-btn {
+        width: 40px;
+        height: 40px;
+      }
+      .flag-icon {
+        font-size: 18px;
+      }
     }
 
     .hero {
@@ -233,6 +342,11 @@
         line-height: 1;
         position: relative;
         z-index: 3;
+    }
+
+    .hero-title .char {
+        display: inline-block;
+        will-change: transform, opacity, filter;
     }
 
     .gradient-separator {
@@ -335,126 +449,6 @@
 
 
 
-    .third-section {
-        position: relative;
-        width: 100%;
-        background: #000;
-        padding: 10px 0 40px 0; 
-        z-index: 1;
-    }
-    .features-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px 20px;
-        border-left: 1px solid #333;
-        border-top: 1px solid #333;
-    }
-    @media(min-width: 768px) {
-        .features-grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-    @media(min-width: 1024px) {
-        .features-grid {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-    .feature {
-        position: relative;
-        padding: 40px 20px;
-        border-right: 1px solid #333;
-        border-bottom: 1px solid #333;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        overflow: hidden;
-        opacity: 0;
-        transform: translateY(20px);
-        animation: fadeInUp 0.6s forwards;
-        border-radius: 8px;
-    }
-
-    .feature:focus {
-        outline: 2px solid #261bf5;
-        outline-offset: 4px;
-        background-color: rgba(38, 27, 245, 0.1);
-    }
-    .feature:nth-child(1) { animation-delay: 0s; }
-    .feature:nth-child(2) { animation-delay: 0.1s; }
-    .feature:nth-child(3) { animation-delay: 0.2s; }
-    .feature:nth-child(4) { animation-delay: 0.3s; }
-    .feature:nth-child(5) { animation-delay: 0.4s; }
-    .feature:nth-child(6) { animation-delay: 0.5s; }
-    .feature:nth-child(7) { animation-delay: 0.6s; }
-    .feature:nth-child(8) { animation-delay: 0.7s; }
-    @keyframes fadeInUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .feature:hover .overlay-top,
-    .feature:hover .overlay-bottom {
-      opacity: 1;
-    }
-    .overlay-top,
-    .overlay-bottom {
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.3s;
-      z-index: 1;
-    }
-    .overlay-top {
-      top: 0;
-      background: linear-gradient(to top, #111, transparent);
-    }
-    .overlay-bottom {
-      bottom: 0;
-      background: linear-gradient(to bottom, #111, transparent);
-    }
-    .feature-icon {
-      width: 40px;
-      height: 40px;
-      margin-bottom: 20px;
-      fill: #aaa;
-      transition: fill 0.3s;
-      z-index: 2;
-    }
-    .feature:hover .feature-icon {
-      fill: #261bf5;
-    }
-    .feature-title {
-      font-weight: bold;
-      font-size: 18px;
-      margin-bottom: 10px;
-      position: relative;
-      padding-left: 10px;
-      color: #eee;
-      z-index: 2;
-    }
-    .feature-title::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      height: 24px;
-      width: 4px;
-      background-color: #555;
-      border-radius: 0 12px 12px 0;
-      transition: all 0.3s;
-    }
-    .feature:hover .feature-title::before {
-      height: 32px;
-      background-color: #261bf5;
-    }
-    .feature-description {
-      font-size: 14px;
-      max-width: 250px;
-      color: #aaa;
-      z-index: 2;
-    }
 
 .skills-section {
   position: relative;
@@ -1167,14 +1161,7 @@ body.lock-screen {
 .timeline-item {
   position: relative;
   margin-bottom: 80px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-
-.timeline-item.visible {
-  opacity: 1;
-  transform: translateY(0);
+  /* Opacity removido - GSAP controla isso */
 }
 
 .timeline-item:nth-child(odd) .timeline-content {
@@ -1552,13 +1539,22 @@ body.lock-screen {
     <nav class="nav hidden" id="primary-navigation" role="navigation" aria-hidden="true">
         <canvas></canvas>
         <ol class="nav-items">
-            <li class="nav-item"><a href="#home">Home</a></li>
-            <li class="nav-item"><a href="#work">Meu trabalho</a></li>
-            <li class="nav-item"><a href="#timeline">Timeline</a></li>
-            <li class="nav-item"><a href="#skills">Skills</a></li>
-            <li class="nav-item"><a href="#contact" data-focused="last-focused">Contato</a></li>
+            <li class="nav-item"><a href="#home" data-i18n="nav.home">Home</a></li>
+            <li class="nav-item"><a href="#work" data-i18n="nav.work">Meu trabalho</a></li>
+            <li class="nav-item"><a href="#timeline" data-i18n="nav.timeline">Timeline</a></li>
+            <li class="nav-item"><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+            <li class="nav-item"><a href="#contact" data-focused="last-focused" data-i18n="nav.contact">Contato</a></li>
         </ol>
     </nav>
+    
+    <div class="language-selector" aria-label="Language selector">
+        <button type="button" id="btn-lang-pt" aria-pressed="true" class="lang-btn" title="Português">
+            <span class="flag-icon">🇧🇷</span>
+        </button>
+        <button type="button" id="btn-lang-en" aria-pressed="false" class="lang-btn" title="English">
+            <span class="flag-icon">🇺🇸</span>
+        </button>
+    </div>
 
     <div class="hero" id="home">
         <h1 class="hero-title">Filipe.</h1>
@@ -1568,15 +1564,15 @@ body.lock-screen {
 
     <section class="second-section" id="work">
         <div class="content">
-            <h2>Criando projetos <span class="pointer-highlight-container">
-                <span class="highlight-text">envolventes</span>
+            <h2><span data-i18n="work.title_prefix">Criando projetos</span> <span class="pointer-highlight-container">
+                <span class="highlight-text" data-i18n="work.highlight">envolventes</span>
                 <span class="highlight-overlay">
                     <span class="highlight-rectangle"></span>
                     <svg class="pointer-arrow" viewBox="0 0 16 16">
                         <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"/>
                     </svg>
                 </span>
-            </span>.</h2>
+            </span><span>.</span></h2>
 			
             <div class="projects-wrapper">
                 <div class="card" id="image-reveal"></div>
@@ -1586,37 +1582,31 @@ body.lock-screen {
             <div class="more-projects-btn-container">
                 <button class="more-projects-btn" onclick="window.open('https://github.com/Filipe-Kosher', '_blank')">
                     <i class="fas fa-code"></i>
-                    <span>Ver mais projetos</span>
+                    <span data-i18n="buttons.more_projects">Ver mais projetos</span>
                     <i class="fas fa-external-link-alt"></i>
                 </button>
             </div>
         </div>
     </section>
 
-    <section class="third-section" id="blog">
-        <div class="content">
-            <h2 style="font-family: 'Libertinus Serif Display', serif; font-size: 44px; color: #e0e0ff; text-align: center; margin-bottom: 18px; margin-top: 0; letter-spacing: 1px; font-weight: 700; text-shadow: 0 2px 16px rgba(38,27,245,0.12);">Relacionamento com o Cliente</h2>
-            <div class="features-grid"></div>
-        </div>
-    </section>
 
 	<section class="stats-section">
 		<div class="stats-container">
 			<div class="stats-header">
-				<h2>Nem tudo é sobre código, mas sobre impacto.</h2>
+                <h2 data-i18n="stats.header">Nem tudo é sobre código, mas sobre impacto.</h2>
 			</div>
 			<div class="stats-grid">
 				<div class="stat-item">
 					<div class="stat-number" data-target="300000">0</div>
-					<p>Pessoas alcançadas</p>
+                    <p data-i18n="stats.reach">Pessoas alcançadas</p>
 				</div>
 				<div class="stat-item">
 					<div class="stat-number" data-target="3">0</div>
-					<p>Equipes lideradas</p>
+                    <p data-i18n="stats.teams">Equipes lideradas</p>
 				</div>
 				<div class="stat-item">
 					<div class="stat-number" data-target="20">0</div>
-					<p>Projetos concluidos</p>
+                    <p data-i18n="stats.projects">Projetos concluidos</p>
 				</div>
 			</div>
 		</div>
@@ -1624,14 +1614,14 @@ body.lock-screen {
 
     <section class="timeline-section" id="timeline">
         <div class="timeline-container">
-            <h2 class="timeline-title">Minha Jornada</h2>
+            <h2 class="timeline-title" data-i18n="timeline.title">Minha Jornada</h2>
             <div class="timeline">
                 <div class="timeline-item" data-year="2022">
                     <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">Novembro 2022</div>
-                        <h3>Estudos Autodidatas</h3>
-                        <p>Início da jornada na programação</p>
+                        <div class="timeline-date" data-i18n="timeline.nov_2022">Novembro 2022</div>
+                        <h3 data-i18n="timeline.self_study">Estudos Autodidatas</h3>
+                        <p data-i18n="timeline.self_study_desc">Início da jornada na programação</p>
                     </div>
                 </div>
                 
@@ -1640,7 +1630,7 @@ body.lock-screen {
                     <div class="timeline-content">
                         <div class="timeline-date">2023 - 2025</div>
                         <h3>aMathyzin Group</h3>
-                        <p>Dev Backend e Gestor de projetos</p>
+                        <p data-i18n="timeline.amathyzin_desc">Dev Backend e Gestor de projetos</p>
                     </div>
                 </div>
                 
@@ -1649,7 +1639,7 @@ body.lock-screen {
                     <div class="timeline-content">
                         <div class="timeline-date">2023 - 2024</div>
                         <h3>Lion fé</h3>
-                        <p>Dev Backend</p>
+                        <p data-i18n="timeline.backend">Dev Backend</p>
                     </div>
                 </div>
                 
@@ -1658,7 +1648,7 @@ body.lock-screen {
                     <div class="timeline-content">
                         <div class="timeline-date">2024</div>
                         <h3>Equipe iGust</h3>
-                        <p>Dev Fullstack, Gestor</p>
+                        <p data-i18n="timeline.fullstack_manager">Dev Fullstack, Gestor</p>
                     </div>
                 </div>
                 
@@ -1667,7 +1657,7 @@ body.lock-screen {
                     <div class="timeline-content">
                         <div class="timeline-date">2024</div>
                         <h3>Max Odontologia</h3>
-                        <p>Dev Fullstack</p>
+                        <p data-i18n="timeline.fullstack">Dev Fullstack</p>
                     </div>
                 </div>
                 
@@ -1676,25 +1666,25 @@ body.lock-screen {
                     <div class="timeline-content">
                         <div class="timeline-date">2025</div>
                         <h3>Yatzar Studio</h3>
-                        <p>Dev Fullstack, Gestor</p>
+                        <p data-i18n="timeline.fullstack_manager">Dev Fullstack, Gestor</p>
                     </div>
                 </div>
                 
                 <div class="timeline-item" data-year="2025-atual">
                     <div class="timeline-marker current"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2025 - Atual</div>
+                        <div class="timeline-date" data-i18n="timeline.2025_current">2025 - Atual</div>
                         <h3>Calisto Networking</h3>
-                        <p>Dev Fullstack</p>
+                        <p data-i18n="timeline.fullstack">Dev Fullstack</p>
                     </div>
                 </div>
                 
                 <div class="timeline-item" data-year="2025-atual">
                     <div class="timeline-marker current"></div>
                     <div class="timeline-content">
-                        <div class="timeline-date">2025 - Atual</div>
+                        <div class="timeline-date" data-i18n="timeline.2025_current">2025 - Atual</div>
                         <h3>Mundo do Samzinho</h3>
-                        <p>Dev Fullstack</p>
+                        <p data-i18n="timeline.fullstack">Dev Fullstack</p>
                     </div>
                 </div>
                 
@@ -1703,7 +1693,7 @@ body.lock-screen {
                     <div class="timeline-content">
                         <div class="timeline-date">2025</div>
                         <h3>Arcade Lunar</h3>
-                        <p>Dev Backend</p>
+                        <p data-i18n="timeline.backend">Dev Backend</p>
                     </div>
                 </div>
             </div>
@@ -1723,7 +1713,7 @@ body.lock-screen {
 
 <section class="skills-section" id="skills">
     <div class="content">
-      <h2 class="skills-title">Stacks</h2>
+      <h2 class="skills-title" data-i18n="skills.title">Stacks</h2>
   
       <div class="scroll" style="--t:35s">
         <div>
@@ -1799,13 +1789,13 @@ body.lock-screen {
 
 <section class="contact-section">
   <div id="contact" class="contact-card">
-    <h2>Fale Comigo</h2>
-    <p>Quer conversar sobre projetos, ideias ou colaborações? Estou à disposição!</p>
+    <h2 data-i18n="contact.title">Fale Comigo</h2>
+    <p data-i18n="contact.subtitle">Quer conversar sobre projetos, ideias ou colaborações? Estou à disposição!</p>
 
     <a href="mailto:filipe@filipedev.pro">
       <button class="cta-button" type="button">
         <i class="fas fa-envelope"></i>
-        <span>Entrar em Contato</span>
+        <span data-i18n="buttons.contact">Entrar em Contato</span>
       </button>
     </a>
 
@@ -1825,11 +1815,134 @@ body.lock-screen {
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <script>
     const nav = document.querySelector(".nav");
     const navMenu = document.querySelector(".nav-items");
     const btnToggleNav = document.querySelector(".menu-btn");
+    let navTl;
+
+    // ===== i18n (PT/EN) =====
+    const i18n = {
+      pt: {
+        'meta.title': 'Portfólio Filipe - Desenvolvedor Fullstack & UI/UX Designer',
+        'meta.description': 'Portfólio de Filipe: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte. Veja meus projetos e habilidades!',
+        'meta.og_title': 'Portfólio Filipe',
+        'meta.og_description': 'Portfólio de Filipe: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte.',
+        'nav.home': 'Home',
+        'nav.work': 'Meu trabalho',
+        'nav.timeline': 'Timeline',
+        'nav.skills': 'Skills',
+        'nav.contact': 'Contato',
+        'work.title_prefix': 'Criando projetos',
+        'work.highlight': 'envolventes',
+        'buttons.more_projects': 'Ver mais projetos',
+        'stats.header': 'Nem tudo é sobre código, mas sobre impacto.',
+        'stats.reach': 'Pessoas alcançadas',
+        'stats.teams': 'Equipes lideradas',
+        'stats.projects': 'Projetos concluidos',
+        'timeline.title': 'Minha Jornada',
+        'timeline.nov_2022': 'Novembro 2022',
+        'timeline.self_study': 'Estudos Autodidatas',
+        'timeline.self_study_desc': 'Início da jornada na programação',
+        'timeline.amathyzin_desc': 'Dev Backend e Gestor de projetos',
+        'timeline.backend': 'Dev Backend',
+        'timeline.fullstack_manager': 'Dev Fullstack, Gestor',
+        'timeline.fullstack': 'Dev Fullstack',
+        'timeline.2025_current': '2025 - Atual',
+        'skills.title': 'Stacks',
+        'contact.title': 'Fale Comigo',
+        'contact.subtitle': 'Quer conversar sobre projetos, ideias ou colaborações? Estou à disposição!'
+        ,
+        'buttons.contact': 'Entrar em Contato',
+        'footer.role': 'Desenvolvedor Fullstack & UI/UX Designer',
+        'footer.projects': 'Projetos',
+        'footer.made_with': 'Feito com',
+        'footer.in_brazil': 'no Brasil'
+      },
+      en: {
+        'meta.title': "Filipe's Portfolio - Fullstack Developer & UI/UX Designer",
+        'meta.description': "Filipe's portfolio: web developer, UI/UX, specialist in engaging projects, fast delivery, security and support. Check my projects and skills!",
+        'meta.og_title': "Filipe's Portfolio",
+        'meta.og_description': "Filipe's portfolio: web developer, UI/UX, specialist in engaging projects, fast delivery, security and support.",
+        'nav.home': 'Home',
+        'nav.work': 'My Work',
+        'nav.timeline': 'Timeline',
+        'nav.skills': 'Skills',
+        'nav.contact': 'Contact',
+        'work.title_prefix': 'Crafting',
+        'work.highlight': 'engaging projects',
+        'buttons.more_projects': 'See more projects',
+        'stats.header': "It's not all about code, it's about impact.",
+        'stats.reach': 'People reached',
+        'stats.teams': 'Teams led',
+        'stats.projects': 'Projects completed',
+        'timeline.title': 'My Journey',
+        'timeline.nov_2022': 'November 2022',
+        'timeline.self_study': 'Self-taught Studies',
+        'timeline.self_study_desc': 'Beginning of the programming journey',
+        'timeline.amathyzin_desc': 'Backend Dev and Project Manager',
+        'timeline.backend': 'Backend Dev',
+        'timeline.fullstack_manager': 'Fullstack Dev, Manager',
+        'timeline.fullstack': 'Fullstack Dev',
+        'timeline.2025_current': '2025 - Present',
+        'skills.title': 'Stacks',
+        'contact.title': 'Contact Me',
+        'contact.subtitle': "Want to talk about projects, ideas or collaborations? I'm available!",
+        'buttons.contact': 'Get in touch',
+        'footer.role': 'Fullstack Developer & UI/UX Designer',
+        'footer.projects': 'Projects',
+        'footer.made_with': 'Made with',
+        'footer.in_brazil': 'in Brazil',
+      }
+    };
+
+    function applyTranslations(lang) {
+      const dict = i18n[lang] || i18n.pt;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.textContent = dict[key];
+      });
+      document.querySelectorAll('[data-i18n-meta]').forEach(el => {
+        const key = el.getAttribute('data-i18n-meta');
+        if (dict[key]) el.setAttribute('content', dict[key]);
+      });
+      document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+      // Toggle button pressed state
+      const btnPT = document.getElementById('btn-lang-pt');
+      const btnEN = document.getElementById('btn-lang-en');
+      if (btnPT && btnEN) {
+        const isEN = lang === 'en';
+        btnPT.setAttribute('aria-pressed', String(!isEN));
+        btnEN.setAttribute('aria-pressed', String(isEN));
+      }
+      // Update document title explicitly for some browsers
+      const titleKey = 'meta.title';
+      if (dict[titleKey]) document.title = dict[titleKey];
+    }
+
+    function getCurrentLang() {
+      return (localStorage.getItem('siteLang') || ((navigator.language || '').toLowerCase().startsWith('en') ? 'en' : 'pt'));
+    }
+
+    function setLanguage(lang) {
+      const target = (lang === 'en') ? 'en' : 'pt';
+      localStorage.setItem('siteLang', target);
+      applyTranslations(target);
+    }
+
+    // Bind language buttons
+    const btnLangPT = document.getElementById('btn-lang-pt');
+    const btnLangEN = document.getElementById('btn-lang-en');
+    if (btnLangPT) btnLangPT.addEventListener('click', () => setLanguage('pt'));
+    if (btnLangEN) btnLangEN.addEventListener('click', () => setLanguage('en'));
+
+    // Initialize language
+    const savedLang = localStorage.getItem('siteLang');
+    const browserLang = (navigator.language || navigator.userLanguage || 'pt').toLowerCase().startsWith('en') ? 'en' : 'pt';
+    applyTranslations(savedLang || browserLang);
 
     const toggleNav = () => {
       nav.classList.toggle("hidden");
@@ -1837,6 +1950,29 @@ body.lock-screen {
       document.body.classList.toggle("lock-screen");
       btnToggleNav.setAttribute('aria-expanded', String(expanded));
       nav.setAttribute('aria-hidden', String(!expanded));
+      const langSelector = document.querySelector('.language-selector');
+      const langButtons = document.querySelectorAll('.lang-btn');
+      if (langSelector) {
+        if (expanded) {
+          langSelector.classList.add('visible');
+          // Garantir que os botões fiquem visíveis após a animação
+          setTimeout(() => {
+            langButtons.forEach(btn => {
+              btn.style.opacity = '1';
+              btn.style.visibility = 'visible';
+            });
+          }, 600);
+        } else {
+          langSelector.classList.remove('visible');
+        }
+      }
+      if (window.gsap && navTl) {
+        if (expanded) {
+          navTl.restart();
+        } else {
+          navTl.timeScale(1.4).reverse();
+        }
+      }
     };
 
     btnToggleNav.addEventListener("click", toggleNav);
@@ -2001,10 +2137,13 @@ body.lock-screen {
         const ctaButton = document.querySelector('.cta-button');
         if (ctaButton) {
             ctaButton.addEventListener('click', () => {
-                ctaButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Abrindo contato...';
+                const lang = (localStorage.getItem('siteLang')||'pt');
+                const loading = (lang==='en') ? 'Opening email...' : 'Abrindo contato...';
+                const ready = (lang==='en') ? 'Done!' : 'Pronto!';
+                ctaButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> ' + loading;
                 setTimeout(() => {
                     setTimeout(() => {
-                        ctaButton.innerHTML = '<i class="fas fa-check"></i> Pronto!';
+                        ctaButton.innerHTML = '<i class="fas fa-check"></i> ' + ready;
                     }, 2000);
 
                     ctaButton.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
@@ -2015,6 +2154,72 @@ body.lock-screen {
     });
 
     window.addEventListener('load', () => {
+        if (window.gsap) {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            
+            gsap.defaults({ ease: "power3.out" });
+
+            // Split letters for deluxe intro
+            const heroTitle = document.querySelector('.hero-title');
+            if (heroTitle && heroTitle.textContent) {
+                const raw = heroTitle.textContent;
+                heroTitle.textContent = '';
+                const frag = document.createDocumentFragment();
+                [...raw].forEach((ch) => {
+                    const span = document.createElement('span');
+                    span.className = 'char';
+                    span.innerHTML = ch === ' ' ? '&nbsp;' : ch;
+                    frag.appendChild(span);
+                });
+                heroTitle.appendChild(frag);
+
+                const chars = heroTitle.querySelectorAll('.char');
+                gsap.set(heroTitle, { perspective: 600 });
+                gsap.from(chars, {
+                    y: 42,
+                    opacity: 0,
+                    rotateX: 40,
+                    rotateZ: 0.0001,
+                    filter: 'blur(8px)',
+                    duration: 1.25,
+                    ease: 'expo.out',
+                    stagger: { each: 0.06, from: 'center' }
+                });
+            }
+
+            // Menu button reveal
+            gsap.from(".menu-btn", { y: -16, autoAlpha: 0, duration: 1.0, ease: "power3.out", delay: 0.15 });
+
+            // Nav items timeline (plays on open)
+            navTl = gsap.timeline({ paused: true });
+            navTl.from(".nav-items .nav-item", { x: -28, autoAlpha: 0, stagger: 0.06, duration: 0.6, ease: "power4.out" }, 0);
+            navTl.from(".language-selector .lang-btn", { y: 20, autoAlpha: 0, stagger: 0.1, duration: 0.5, ease: "power3.out" }, 0.3);
+
+            // Sections reveal
+            gsap.from(".second-section .content", {
+                scrollTrigger: { trigger: ".second-section", start: "top 70%" },
+                y: 36,
+                autoAlpha: 0,
+                duration: 1.1,
+                ease: "power4.out"
+            });
+            gsap.from(".skills-section .content", {
+                scrollTrigger: { trigger: ".skills-section", start: "top 75%" },
+                y: 36,
+                autoAlpha: 0,
+                duration: 1.1,
+                ease: "power4.out"
+            });
+            gsap.from(".companies-section .company-logo", {
+                scrollTrigger: { trigger: ".companies-section", start: "top 80%" },
+                autoAlpha: 0,
+                y: 20,
+                stagger: 0.06,
+                duration: 0.7,
+                ease: "power3.out"
+            });
+        }
         new SilkEffect({ speed:1, scale:1, color:"#095B8B", noiseIntensity:1.5, rotation:5 });
 
         const container = document.querySelector('.pointer-highlight-container');
@@ -2150,16 +2355,24 @@ body.lock-screen {
 
                     if (isDesktop && floatingImage) {
                         floatingImage.src = project.src;
+                        if (window.gsap) {
+                            gsap.to(floatingImage, { autoAlpha: 1, scale: 1.04, duration: 0.45, ease: "power3.out" });
+                        } else {
                         floatingImage.style.opacity = "1";
                         floatingImage.style.transform = "translate(-50%, -50%) scale(1)";
+                        }
                     }
                 });
 
                 item.addEventListener("mouseleave", () => {
                     item.classList.remove("active");
                     if (isDesktop && floatingImage) {
+                        if (window.gsap) {
+                            gsap.to(floatingImage, { autoAlpha: 0, scale: 1, duration: 0.4, ease: "power3.inOut" });
+                        } else {
                         floatingImage.style.opacity = "0";
                         floatingImage.style.transform = "translate(-50%, -50%) scale(1)";
+                        }
                     }
                 });
 
@@ -2188,50 +2401,17 @@ body.lock-screen {
 
                 animate();
             }
-        }
-
-        const icons = {
-          terminal: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4h18v16H3V4zm2 2v12h14V6H5zm2 2l4 4-4 4" fill="currentColor"/></svg>`,
-          ease: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18" fill="currentColor"/></svg>`,
-          dollar: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1v22M17 5H9a4 4 0 1 0 0 8h6a4 4 0 1 1 0 8H7" fill="currentColor"/></svg>`,
-          cloud: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 19a4 4 0 0 1 0-8 a5 5 0 0 1 10 0h1a3 3 0 1 1 0 6H6z" fill="currentColor"/></svg>`,
-          route: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="currentColor"/></svg>`,
-          help: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm0 14h0M12 8a2 2 0 1 1 0 4" fill="currentColor"/></svg>`,
-          bolt: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="currentColor"/></svg>`,
-          heart: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21s-6-5.333-10-10c-4-4.667 2-11 10-3 8-8 14 .333 10 5-4 4.667-10 10-10 10z" fill="currentColor"/></svg>`
-        };
-
-        const features = [
-          { title: "Entrega rápida", description: "Priorizo sempre entregar no prazo definido por você cliente!", icon: icons.terminal },
-          { title: "Segurança", description: "Prezo sempre pela segurança e qualidade do seu código, garantindo que não haja vulnerabilidades ou problemas de segurança.", icon: icons.ease },
-          { title: "Preços imbatíveis", description: "Meu preço é o melhor e mais acessível do mercado, garantindo que você tenha o melhor custo benefício.", icon: icons.dollar },
-          { title: "100% de garantia", description: "Garantia eterna e grátis sobre correção de erros. Qualquer modificação ou alteração não existente no site, será cobrada uma taxa justa conforme a alteração.", icon: icons.cloud },
-          { title: "Suporte 24/6", description: "Garanto o suporte e comunicação ao cliente, sempre visando a sua satisfação.", icon: icons.help },
-          { title: "E tudo mais.", description: "Cada projeto é único, minha prioridade é garantir que você tenha a melhor experiência.", icon: icons.heart },
-        ];
-
-        const grid = document.querySelector('.features-grid');
-        if (grid) {
-          features.forEach((feature, index) => {
-            const div = document.createElement('div');
-            div.className = 'feature';
-            const overlay = document.createElement('div');
-            overlay.className = index < 4 ? 'overlay-top' : 'overlay-bottom';
-            div.appendChild(overlay);
-            const iconDiv = document.createElement('div');
-            iconDiv.className = 'feature-icon';
-            iconDiv.innerHTML = feature.icon;
-            div.appendChild(iconDiv);
-            const title = document.createElement('div');
-            title.className = 'feature-title';
-            title.textContent = feature.title;
-            div.appendChild(title);
-            const desc = document.createElement('p');
-            desc.className = 'feature-description';
-            desc.textContent = feature.description;
-            div.appendChild(desc);
-            grid.appendChild(div);
-          });
+            // Projects list stagger reveal
+            if (window.gsap) {
+                gsap.from(".project-item", {
+                    scrollTrigger: { trigger: ".projects-wrapper", start: "top 80%" },
+                    y: 22,
+                    autoAlpha: 0,
+                    stagger: 0.06,
+                    duration: 0.6,
+                    ease: "power3.out"
+                });
+            }
         }
 
         // Stats section animation
@@ -2272,18 +2452,246 @@ body.lock-screen {
 
         document.querySelectorAll('.stat-item, .stats-header').forEach(el => statsObserver.observe(el));
 
-        // Timeline animation
-        const timelineObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        // Timeline animation com conexão animada
+        if (window.gsap) {
+            // Cria a linha animada da timeline (conexão)
+            const timeline = document.querySelector('.timeline');
+            if (timeline && !document.querySelector('.timeline-line-animated')) {
+                const animatedLine = document.createElement('div');
+                animatedLine.className = 'timeline-line-animated';
+                animatedLine.style.cssText = `
+                    position: absolute;
+                    left: 50%;
+                    top: 0;
+                    width: 2px;
+                    background: linear-gradient(to bottom, #261bf5, #e0e0ff);
+                    transform: translateX(-50%);
+                    z-index: 1;
+                    height: 0;
+                    opacity: 0;
+                `;
+                timeline.appendChild(animatedLine);
+                
+                // Anima a linha aparecendo e crescendo de cima para baixo com scroll
+                const timelineItems = document.querySelectorAll('.timeline-item');
+                const lastItem = timelineItems[timelineItems.length - 1];
+                
+                if (lastItem) {
+                    gsap.to(animatedLine, {
+                        scrollTrigger: {
+                            trigger: ".timeline-section",
+                            start: "top 70%",
+                            end: () => `+=${timeline.offsetHeight}`,
+                            scrub: 1,
+                            markers: false
+                        },
+                        height: "100%",
+                        opacity: 1,
+                        ease: "none"
+                    });
+                } else {
+                    // Fallback se não houver itens
+                    gsap.to(animatedLine, {
+                        scrollTrigger: {
+                            trigger: ".timeline-section",
+                            start: "top 70%",
+                            toggleActions: "play none none none"
+                        },
+                        height: "100%",
+                        opacity: 1,
+                        duration: 2,
+                        ease: "power2.out"
+                    });
                 }
-            });
-        }, { threshold: 0.3 });
+            }
 
-        document.querySelectorAll('.timeline-item').forEach(item => {
-            timelineObserver.observe(item);
-        });
+            // Anima os timeline items com efeito de rotação e escala
+            // Garante que existe a seção timeline antes de animar
+            const timelineSection = document.querySelector('.timeline-section');
+            if (timelineSection) {
+                const timelineItems = document.querySelectorAll('.timeline-item');
+                
+                if (timelineItems.length > 0) {
+                    // Inicializa os itens como invisíveis
+                    timelineItems.forEach(item => {
+                        gsap.set(item, { 
+                            autoAlpha: 0, 
+                            scale: 0.8,
+                            y: 30
+                        });
+                    });
+                    
+                    // Anima os itens aparecendo
+                    gsap.to(timelineItems, {
+                        scrollTrigger: {
+                            trigger: ".timeline-section",
+                            start: "top 75%",
+                            toggleActions: "play none none reverse",
+                            markers: false
+                        },
+                        autoAlpha: 1,
+                        scale: 1,
+                        y: 0,
+                        stagger: {
+                            amount: 0.6,
+                            from: "start"
+                        },
+                        duration: 0.7,
+                        ease: "power3.out"
+                    });
+                    
+                    // Força refresh do ScrollTrigger
+                    ScrollTrigger.refresh();
+                }
+            }
+
+            // Anima os marcadores da timeline
+            gsap.from(".timeline-marker", {
+                scrollTrigger: {
+                    trigger: ".timeline-section",
+                    start: "top 60%",
+                    toggleActions: "play none none reverse"
+                },
+                scale: 0,
+                autoAlpha: 0,
+                stagger: {
+                    amount: 1,
+                    from: "start"
+                },
+                duration: 0.6,
+                ease: "back.out(2)"
+            });
+
+            // Efeito hover nos itens da timeline
+            document.querySelectorAll('.timeline-item').forEach((item, index) => {
+                const marker = item.querySelector('.timeline-marker');
+                const content = item.querySelector('.timeline-content');
+                const isOdd = index % 2 === 0;
+                
+                item.addEventListener('mouseenter', () => {
+                    if (marker) {
+                        gsap.to(marker, {
+                            scale: 1.5,
+                            boxShadow: "0 0 20px rgba(38, 27, 245, 0.8)",
+                            backgroundColor: "#261bf5",
+                            duration: 0.3,
+                            ease: "power2.out"
+                        });
+                    }
+                    if (content) {
+                        gsap.to(content, {
+                            borderColor: "#261bf5",
+                            x: isOdd ? -10 : 10,
+                            backgroundColor: "rgba(38, 27, 245, 0.05)",
+                            duration: 0.3,
+                            ease: "power2.out"
+                        });
+                    }
+                });
+                
+                item.addEventListener('mouseleave', () => {
+                    if (marker) {
+                        const isCurrent = marker.classList.contains('current');
+                        gsap.to(marker, {
+                            scale: 1,
+                            boxShadow: isCurrent ? "0 0 0 4px rgba(255, 255, 255, 0.1)" : "none",
+                            backgroundColor: isCurrent ? "#fff" : "#666",
+                            duration: 0.3,
+                            ease: "power2.out"
+                        });
+                    }
+                    if (content) {
+                        gsap.to(content, {
+                            borderColor: "#222",
+                            x: 0,
+                            backgroundColor: "transparent",
+                            duration: 0.3,
+                            ease: "power2.out"
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Fallback com IntersectionObserver apenas se GSAP não estiver disponível
+        if (!window.gsap) {
+            const timelineObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                timelineObserver.observe(item);
+            });
+        }
+
+        // Text Reveal para títulos
+        function textReveal(selector) {
+            const elements = document.querySelectorAll(selector);
+            elements.forEach(el => {
+                const originalText = el.textContent.trim();
+                if (!originalText) return;
+                
+                el.textContent = '';
+                const words = originalText.split(' ');
+                
+                words.forEach((word, i) => {
+                    // Cria span para a palavra
+                    const span = document.createElement('span');
+                    span.textContent = word;
+                    span.style.display = 'inline-block';
+                    span.style.opacity = '0';
+                    span.style.transform = 'translateY(20px)';
+                    el.appendChild(span);
+                    
+                    // Adiciona espaço após a palavra (exceto na última)
+                    if (i < words.length - 1) {
+                        const space = document.createTextNode(' ');
+                        el.appendChild(space);
+                    }
+                    
+                    gsap.to(span, {
+                        scrollTrigger: {
+                            trigger: el,
+                            start: "top 80%",
+                            toggleActions: "play none none none"
+                        },
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.6,
+                        delay: i * 0.1,
+                        ease: "power3.out"
+                    });
+                });
+            });
+        }
+
+        // Aplicar text reveal nos títulos
+        if (window.gsap) {
+            textReveal('.skills-title');
+            textReveal('.timeline-title');
+            textReveal('.stats-header h2');
+        }
+
+        // Animação de entrada no Footer
+        if (window.gsap) {
+            gsap.from(".footer-container > *", {
+                scrollTrigger: {
+                    trigger: ".footer",
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                },
+                y: 40,
+                autoAlpha: 0,
+                stagger: 0.1,
+                duration: 0.8,
+                ease: "power3.out"
+            });
+        }
 
     });
 
@@ -2296,15 +2704,15 @@ body.lock-screen {
     <div class="footer-container">
         <div class="footer-brand">
             <h3>Filipe.</h3>
-            <p>Desenvolvedor Fullstack & UI/UX Designer</p>
+            <p data-i18n="footer.role">Desenvolvedor Fullstack & UI/UX Designer</p>
         </div>
         
         <div class="footer-nav">
-            <a href="#home">Home</a>
-            <a href="#work">Projetos</a>
-            <a href="#timeline">Timeline</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contato</a>
+            <a href="#home" data-i18n="nav.home">Home</a>
+            <a href="#work" data-i18n="footer.projects">Projetos</a>
+            <a href="#timeline" data-i18n="nav.timeline">Timeline</a>
+            <a href="#skills" data-i18n="nav.skills">Skills</a>
+            <a href="#contact" data-i18n="nav.contact">Contato</a>
         </div>
         
         <div class="footer-social">
@@ -2320,7 +2728,7 @@ body.lock-screen {
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2025 Filipe. Feito com <i class="fas fa-heart"></i> no Brasil</p>
+            <p>&copy; 2025 Filipe. <span data-i18n="footer.made_with">Feito com</span> <i class="fas fa-heart"></i> <span data-i18n="footer.in_brazil">no Brasil</span></p>
         </div>
     </div>
 </footer>
