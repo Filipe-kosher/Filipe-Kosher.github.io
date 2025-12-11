@@ -1,7 +1,7 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Portfólio Filipe - Desenvolvedor Fullstack & UI/UX Designer',
+  title: 'Portfólio Filipe - Desenvolvedor Frontend & UI/UX Designer',
   description: 'Portfólio de Filipe: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte. Veja meus projetos e habilidades!'
 }
 
