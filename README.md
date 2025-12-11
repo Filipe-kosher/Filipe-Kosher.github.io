@@ -6,16 +6,12 @@
 
 ## Tecnologias
 
-- HTML5
-- CSS3  
-- JavaScript
+- ReactJS
+- NextJS
+- Framer motion
+- GSAP
 - Threejs
-- jQuery (3.6.0)
-- Slick Carousel
+- CSS
 - Font Awesome
 
----
 
-## Screenshot
-
-![Screenshot do Projeto](screenshot.png)
