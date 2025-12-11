@@ -112,7 +112,7 @@ export default function Page() {
               <i className="fas fa-external-link-alt"></i>
             </button>
           </div>
-          <TextParallax images={["/images/1.jpg", "/images/2.jpg"]} text="Desenvolvedor Front End" />
+          <TextParallax images={["/images/1.jpg", "/images/2.jpg"]} text="Desenvolvedor Frontend" />
         </div>
       </section>
 
@@ -171,7 +171,7 @@ export default function Page() {
               <div className="timeline-content">
                 <div className="timeline-date">2024</div>
                 <h3>Equipe iGust</h3>
-                <p data-i18n="timeline.fullstack_manager">Dev Fullstack, Gestor</p>
+                <p data-i18n="timeline.fullstack_manager">Dev Frontend, Gestor</p>
               </div>
             </div>
             <div className="timeline-item" data-year="2024">
@@ -179,7 +179,7 @@ export default function Page() {
               <div className="timeline-content">
                 <div className="timeline-date">2024</div>
                 <h3>Max Odontologia</h3>
-                <p data-i18n="timeline.fullstack">Dev Fullstack</p>
+                <p data-i18n="timeline.fullstack">Dev Frontend</p>
               </div>
             </div>
             <div className="timeline-item" data-year="2025">
@@ -187,7 +187,7 @@ export default function Page() {
               <div className="timeline-content">
                 <div className="timeline-date">2025</div>
                 <h3>Yatzar Studio</h3>
-                <p data-i18n="timeline.fullstack_manager">Dev Fullstack, Gestor</p>
+                <p data-i18n="timeline.fullstack_manager">Dev Frontend, Gestor</p>
               </div>
             </div>
             <div className="timeline-item" data-year="2025-atual">
@@ -195,7 +195,7 @@ export default function Page() {
               <div className="timeline-content">
                 <div className="timeline-date" data-i18n="timeline.2025_current">2025 - Atual</div>
                 <h3>Calisto Networking</h3>
-                <p data-i18n="timeline.fullstack">Dev Fullstack</p>
+                <p data-i18n="timeline.fullstack">Dev Frontend</p>
               </div>
             </div>
             <div className="timeline-item" data-year="2025-atual">
@@ -203,7 +203,7 @@ export default function Page() {
               <div className="timeline-content">
                 <div className="timeline-date" data-i18n="timeline.2025_current">2025 - Atual</div>
                 <h3>Mundo do Samzinho</h3>
-                <p data-i18n="timeline.fullstack">Dev Fullstack</p>
+                <p data-i18n="timeline.fullstack">Dev Frontend</p>
               </div>
             </div>
             <div className="timeline-item" data-year="2025">
@@ -330,7 +330,7 @@ export default function Page() {
         <div className="footer-container">
           <div className="footer-brand">
             <h3>Filipe.</h3>
-            <p data-i18n="footer.role">Desenvolvedor Fullstack & UI/UX Designer</p>
+            <p data-i18n="footer.role">Desenvolvedor Frontend & UI/UX Designer</p>
           </div>
           <div className="footer-nav">
             <a href="#home" data-i18n="nav.home">Home</a>
@@ -368,7 +368,7 @@ export default function Page() {
         let navTl;
         const i18n = {
           pt: {
-            'meta.title': 'Portfólio Filipe - Desenvolvedor Fullstack & UI/UX Designer',
+            'meta.title': 'Portfólio Filipe - Desenvolvedor Frontend & UI/UX Designer',
             'meta.description': 'Portfólio de Filipe: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte. Veja meus projetos e habilidades!',
             'meta.og_title': 'Portfólio Filipe',
             'meta.og_description': 'Portfólio de Filipe: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte.',
@@ -390,20 +390,20 @@ export default function Page() {
             'timeline.self_study_desc': 'Início da jornada na programação',
             'timeline.amathyzin_desc': 'Dev Backend e Gestor de projetos',
             'timeline.backend': 'Dev Backend',
-            'timeline.fullstack_manager': 'Dev Fullstack, Gestor',
-            'timeline.fullstack': 'Dev Fullstack',
+            'timeline.fullstack_manager': 'Dev Frontend, Gestor',
+            'timeline.fullstack': 'Dev Frontend',
             'timeline.2025_current': '2025 - Atual',
             'skills.title': 'Stacks',
             'contact.title': 'Fale Comigo',
             'contact.subtitle': 'Quer conversar sobre projetos, ideias ou colaborações? Estou à disposição!',
             'buttons.contact': 'Entrar em Contato',
-            'footer.role': 'Desenvolvedor Fullstack & UI/UX Designer',
+            'footer.role': 'Desenvolvedor Frontend & UI/UX Designer',
             'footer.projects': 'Projetos',
             'footer.made_with': 'Feito com',
             'footer.in_brazil': 'no Brasil'
           },
           en: {
-            'meta.title': "Filipe's Portfolio - Fullstack Developer & UI/UX Designer",
+            'meta.title': "Filipe's Portfolio - Frontend Developer & UI/UX Designer",
             'meta.description': "Filipe's portfolio: web developer, UI/UX, specialist in engaging projects, fast delivery, security and support. Check my projects and skills!",
             'meta.og_title': "Filipe's Portfolio",
             'meta.og_description': "Filipe's portfolio: web developer, UI/UX, specialist in engaging projects, fast delivery, security and support.",
@@ -425,14 +425,14 @@ export default function Page() {
             'timeline.self_study_desc': 'Beginning of the programming journey',
             'timeline.amathyzin_desc': 'Backend Dev and Project Manager',
             'timeline.backend': 'Backend Dev',
-            'timeline.fullstack_manager': 'Fullstack Dev, Manager',
-            'timeline.fullstack': 'Fullstack Dev',
+            'timeline.fullstack_manager': 'Frontend Dev, Manager',
+            'timeline.fullstack': 'Frontend Dev',
             'timeline.2025_current': '2025 - Present',
             'skills.title': 'Stacks',
             'contact.title': 'Contact Me',
             'contact.subtitle': "Want to talk about projects, ideas or collaborations? I'm available!",
             'buttons.contact': 'Get in touch',
-            'footer.role': 'Fullstack Developer & UI/UX Designer',
+            'footer.role': 'Frontend Developer & UI/UX Designer',
             'footer.projects': 'Projects',
             'footer.made_with': 'Made with',
             'footer.in_brazil': 'in Brazil'
@@ -721,3 +721,4 @@ export default function Page() {
     </>
   )
 }
+
