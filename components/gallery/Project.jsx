@@ -27,7 +27,7 @@ export default function Project({ index, title, setModal, url, src }) {
       {src && <img src={src} alt={title} className={styles.projectImage} />}
       <div className={styles.projectContent}>
       <h2>{title}</h2>
-      <p>Design & Development</p>
+      <p>Development</p>
       </div>
     </div>
   )
