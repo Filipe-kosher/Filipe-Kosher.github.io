@@ -257,8 +257,6 @@ export default function Page() {
           </div>
           <div className="scroll" style={{ '--t': '18s' }}>
             <div>
-              <span>UI/UX</span>
-              <span>UI Expert</span>
               <span>Bootstrap</span>
               <span>Material UI</span>
               <span>Tailwind</span>
@@ -266,10 +264,10 @@ export default function Page() {
               <span>NPM</span>
               <span>Rest API</span>
               <span>SEO</span>
+              <span>Webpack</span>
+              <span>Vite</span>
             </div>
             <div>
-              <span>UI/UX</span>
-              <span>UI Expert</span>
               <span>Bootstrap</span>
               <span>Material UI</span>
               <span>Tailwind</span>
@@ -277,6 +275,8 @@ export default function Page() {
               <span>NPM</span>
               <span>Rest API</span>
               <span>SEO</span>
+              <span>Webpack</span>
+              <span>Vite</span>
             </div>
           </div>
         </div>
@@ -310,7 +310,7 @@ export default function Page() {
         <div className="footer-container">
           <div className="footer-brand">
             <h3>Filipe.</h3>
-            <p data-i18n="footer.role">Desenvolvedor Frontend & UI/UX Designer</p>
+            <p data-i18n="footer.role">Desenvolvedor Frontend</p>
           </div>
           <div className="footer-nav">
             <a href="#home" data-i18n="nav.home">Home</a>
@@ -349,10 +349,10 @@ export default function Page() {
         let navTl;
         const i18n = {
           pt: {
-            'meta.title': 'Portfólio Filipe - Desenvolvedor Frontend & UI/UX Designer',
-            'meta.description': 'Portfólio de Filipe: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte. Veja meus projetos e habilidades!',
+            'meta.title': 'Portfólio Filipe - Desenvolvedor Frontend',
+            'meta.description': 'Portfólio de Filipe: desenvolvedor web especialista em projetos envolventes, entregas rápidas, segurança e suporte. Veja meus projetos e habilidades!',
             'meta.og_title': 'Portfólio Filipe',
-            'meta.og_description': 'Portfólio de Filipe: desenvolvedor web, UI/UX, especialista em projetos envolventes, entregas rápidas, segurança e suporte.',
+            'meta.og_description': 'Portfólio de Filipe: desenvolvedor web especialista em projetos envolventes, entregas rápidas, segurança e suporte.',
             'nav.home': 'Home',
             'nav.work': 'Meu trabalho',
             'nav.timeline': 'Timeline',
@@ -374,16 +374,16 @@ export default function Page() {
             'contact.title': 'Fale Comigo',
             'contact.subtitle': 'Quer conversar sobre projetos, ideias ou colaborações? Estou à disposição!',
             'buttons.contact': 'Entrar em Contato',
-            'footer.role': 'Desenvolvedor Frontend & UI/UX Designer',
+            'footer.role': 'Desenvolvedor Frontend',
             'footer.projects': 'Projetos',
             'footer.made_with': 'Feito com',
             'footer.in_brazil': 'no Brasil'
           },
           en: {
-            'meta.title': "Filipe's Portfolio - Frontend Developer & UI/UX Designer",
-            'meta.description': "Filipe's portfolio: web developer, UI/UX, specialist in engaging projects, fast delivery, security and support. Check my projects and skills!",
+            'meta.title': "Filipe's Portfolio - Frontend Developer",
+            'meta.description': "Filipe's portfolio: web developer specialist in engaging projects, fast delivery, security and support. Check my projects and skills!",
             'meta.og_title': "Filipe's Portfolio",
-            'meta.og_description': "Filipe's portfolio: web developer, UI/UX, specialist in engaging projects, fast delivery, security and support.",
+            'meta.og_description': "Filipe's portfolio: web developer specialist in engaging projects, fast delivery, security and support.",
             'nav.home': 'Home',
             'nav.work': 'My Work',
             'nav.timeline': 'Timeline',
@@ -405,7 +405,7 @@ export default function Page() {
             'contact.title': 'Contact Me',
             'contact.subtitle': "Want to talk about projects, ideas or collaborations? I'm available!",
             'buttons.contact': 'Get in touch',
-            'footer.role': 'Frontend Developer & UI/UX Designer',
+            'footer.role': 'Frontend Developer',
             'footer.projects': 'Projects',
             'footer.made_with': 'Made with',
             'footer.in_brazil': 'in Brazil'
