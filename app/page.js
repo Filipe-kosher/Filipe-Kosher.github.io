@@ -296,7 +296,7 @@ export default function Page() {
             </a>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2025 Filipe. <span data-i18n="footer.made_with">Feito com</span> <i className="fas fa-heart"></i> <span data-i18n="footer.in_brazil">no Brasil</span></p>
+            <p>&copy; 2026 Filipe. <span data-i18n="footer.made_with">Feito com</span> <i className="fas fa-heart"></i> <span data-i18n="footer.in_brazil">no Brasil</span></p>
           </div>
         </div>
       </footer>
